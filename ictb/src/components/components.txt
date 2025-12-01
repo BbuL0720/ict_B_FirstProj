@@ -1,0 +1,4 @@
+EX)
+ board 페이지에 같은 컴포넌트(기능,태그) 가 들어가면
+ components/board/파일 이름.tsx
+ 만들어서 사용
