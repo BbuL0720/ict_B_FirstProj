@@ -2,3 +2,83 @@
 padding: 0;
 margin: 0;
 }
+/* General layout */
+.slack-container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Workspace bar (left-most) */
+.workspace-bar {
+    width: 70px;
+    background-color: #3F0E40;
+    color: white;
+    padding-top: 20px;
+}
+
+.workspace-icon {
+    background: #611f69;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Sidebar (channels) */
+.sidebar {
+    width: 250px;
+    background-color: #350D36;
+    color: #ddd;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    color: #ddd;
+    padding: 5px 0;
+    margin-left: 5px;
+    font-size: 0.9rem;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    color: white;
+}
+
+.section-title {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.workspace-title {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.chat-area {
+    flex-grow: 1;
+    display: flex;
+    background-color: white;
+}
+
+.chat-header {
+    height: 55px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+.channel-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.input-area {
+    border-top: 1px solid #ddd;
+}
+
+.search-box {
+    width: 200px;
+}
