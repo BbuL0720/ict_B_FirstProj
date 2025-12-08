@@ -5,7 +5,7 @@ import { json } from 'stream/consumers';
 const BoardList: React.FC = () => {
   return (
     <div className='container'>
-      <h2>#board</h2>
+      {/* <h2>#board</h2> */}
       <table className="table table-striped table-hover">
         <thead>
           <tr>

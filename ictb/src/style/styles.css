@@ -14,17 +14,24 @@ margin: 0;
     background-color: #3F0E40;
     color: white;
     padding-top: 20px;
+    position: relative;
 }
 
 .workspace-icon {
     background: #611f69;
     width: 45px;
     height: 45px;
+    border: 2px solid #611f69;
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+.workspace-icon:hover{
+    border: 2px solid #603762;
+    background: #603762;
 }
 
 /* Sidebar (channels) */
@@ -81,4 +88,25 @@ margin: 0;
 
 .search-box {
     width: 200px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.nanum-gothic-regular {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+.no-style{
+    background-color: #3F0E40;
+    border:none;
+    color: white;
 }

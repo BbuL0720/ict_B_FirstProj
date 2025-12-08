@@ -1,47 +1,65 @@
 import React from 'react'
+import BoardList from './board/BoardList'
+import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
+import LostFound from './lostfound/LostFound';
+
 
 const SlackPage: React.FC = () => {
-  return (
-    <div>
-      
-<div className="slack-container d-flex">
+    return (
+        <div>
 
-    <div className="workspace-bar d-flex flex-column align-items-center">
-        <div className="workspace-icon">
-            <span>WS</span>
-        </div>
-        <button className="btn btn-dark mt-3">+</button>
-    </div>
+            <div className="slack-container d-flex">
 
-    <div className="sidebar p-3">
-        <div className="workspace-title">
-            My Workspace
-        </div>
+                <div className="workspace-bar d-flex flex-column align-items-center">
+                        <button className="no-style">
+                            <span className='workspace-icon' style={{ color: '#d7c4daff'}}>
+                                <AutoAwesomeMosaicIcon />
+                            </span>
+                            <p className='nanum-gothic-regular' style={{fontFamily:'Paperozi', fontSize: '13px'}}>게시판</p>
+                        </button>
+                        <button className="no-style">
+                            <span className='workspace-icon' style={{ color: '#d7c4daff'}}>
+                                <AutoAwesomeMosaicIcon />
+                            </span>
+                            <p className='nanum-gothic-regular' style={{fontFamily:'Paperozi', fontSize: '13px'}}>ToDo</p>
+                        </button>
+                        <button className="no-style">
+                            <span className='workspace-icon' style={{ color: '#d7c4daff'}}>
+                                <AutoAwesomeMosaicIcon />
+                            </span>
+                            <p className='nanum-gothic-regular' style={{fontFamily:'Paperozi', fontSize: '13px'}}>찾아용</p>
+                        </button>
+                </div>
 
-        <div className="section-title mt-4">CHANNELS</div>
-        <div className="nav flex-column">
-            <a className="nav-link active"># general</a>
-            <a className="nav-link"># random</a>
-            <a className="nav-link"># design</a>
-            <a className="nav-link"># dev-team</a>
-        </div>
+                <div className="sidebar p-3 nanum-gothic-regular">
+                    <div className="workspace-title">
+                        게시판 목록
+                    </div>
 
-        <div className="section-title mt-4">DIRECT MESSAGES</div>
-        <div className="nav flex-column">
-            <a className="nav-link">John Doe</a>
-            <a className="nav-link">Jane</a>
-            <a className="nav-link">Bot Assistant</a>
-        </div>
-    </div>
+                    <div className="section-title mt-4">일반 게시판</div>
+                    <div className="nav flex-column">
+                        <a className="nav-link active"># 자유게시판</a>
+                        <a className="nav-link"># 정보 공유</a>
+                        <a className="nav-link"># 홍보 게시판</a>
+                        <a className="nav-link"># 동아리</a>
+                    </div>
 
-    <div className="chat-area d-flex flex-column">
+                    <div className="section-title mt-4">학사 게시판</div>
+                    <div className="nav flex-column">
+                        <a className="nav-link"># 캠퍼스 공지사항</a>
+                        <a className="nav-link"># 학과별 공지사항</a>
+                        <a className="nav-link"># 건의사항</a>
+                    </div>
+                </div>
 
-        <div className="chat-header d-flex justify-content-between align-items-center px-3">
-            <div className="channel-title"># general</div>
-            <input className="form-control search-box" placeholder="Search..." />
-        </div>
+                <div className="chat-area d-flex flex-column">
 
-        <div className="messages p-3 flex-grow-1">
+                    <div className="chat-header d-flex justify-content-between align-items-center px-3">
+                        <div className="channel-title"># 자유게시판</div>
+                        <input className="form-control search-box" placeholder="Search..." />
+                    </div>
+
+                    {/* <div className="messages p-3 flex-grow-1">
             <div className="message mb-3">
                 <strong>John</strong> <span className="text-muted small">10:12 AM</span>
                 <div>Hello team! 👋</div>
@@ -51,17 +69,17 @@ const SlackPage: React.FC = () => {
                 <strong>You</strong> <span className="text-muted small">10:13 AM</span>
                 <div>Hi John!</div>
             </div>
-        </div>
+        </div> */}
 
-        <div className="input-area p-3">
+                    {/* <div className="input-area p-3">
             <input className="form-control" placeholder="Message #general..." />
+        </div> */}
+
+                </div>
+
+            </div>
         </div>
-
-    </div>
-
-</div>
-    </div>
-  )
+    )
 }
 
 export default SlackPage

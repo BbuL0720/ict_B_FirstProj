@@ -10,17 +10,19 @@ import "bootstrap/dist/js/bootstrap.js";
 import BoardList from "./pages/board/BoardList";
 import Header from "./pages/Header";
 import Login from "./pages/login/Login";
+import SlackPage from "./pages/SlackPage";
 
 function App() {
   let isLogin = true;
   return (
     <Router>
-      {isLogin && <Header />}
+      {/* {isLogin && <Header />} */}
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={isLogin ? <BoardList /> : <Navigate to="/login" replace />}
-        />
+        /> */}
+        <Route path="/" element={<SlackPage/>}/>
       </Routes>
     </Router>
   );
