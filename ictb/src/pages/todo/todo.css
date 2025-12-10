@@ -94,3 +94,14 @@ abbr[title] {
   border-radius: 0 6px 6px 0;
   color: white;
 }
+
+.react-calendar__month-view__days {
+	height: 400px;
+	align-items: center;
+	margin: 70px 0;
+}
+
+.calendar-container{
+	display: flex;
+	justify-content: center;
+}
