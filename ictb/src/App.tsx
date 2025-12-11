@@ -10,6 +10,7 @@ import "bootstrap/dist/js/bootstrap.js";
 import BoardList from "./pages/board/BoardList";
 import Header from "./pages/Header";
 import Login from "./pages/login/Login";
+import Todo from "./pages/todo/Todo";
 import SlackPage from "./pages/SlackPage";
 
 function App() {
@@ -17,13 +18,15 @@ function App() {
   return (
     <Router>
       {/* {isLogin && <Header />} */}
-      <Routes>
-        {/* <Route
-          path="/"
-          element={isLogin ? <BoardList /> : <Navigate to="/login" replace />}
-        /> */}
-        <Route path="/" element={<SlackPage/>}/>
-      </Routes>
+      <SlackPage>
+        <Routes>
+          <Route
+            path="/"
+            element={isLogin ? <Todo /> : <Navigate to="/login" replace />}
+          />
+          {/* <Route path="/" element={<Todo />} /> */}
+        </Routes>
+      </SlackPage>
     </Router>
   );
 }
