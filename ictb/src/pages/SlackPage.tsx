@@ -2,11 +2,13 @@ import React from 'react'
 import BoardList from './board/BoardList'
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import LostFound from './lostfound/LostFound';
+import Todo from './todo/Todo';
 
 
 const SlackPage: React.FC = () => {
     return (
-        <div>
+      <div>
+          <div style={{position:'fixed'}}>
 
             <div className="slack-container d-flex">
 
@@ -30,7 +32,7 @@ const SlackPage: React.FC = () => {
                             <p className='nanum-gothic-regular' style={{fontFamily:'Paperozi', fontSize: '13px'}}>찾아용</p>
                         </button>
                 </div>
-
+                
                 <div className="sidebar p-3 nanum-gothic-regular">
                     <div className="workspace-title">
                         게시판 목록
@@ -74,11 +76,13 @@ const SlackPage: React.FC = () => {
                     {/* <div className="input-area p-3">
             <input className="form-control" placeholder="Message #general..." />
         </div> */}
-
+            <Todo/>
                 </div>
 
             </div>
         </div>
+        <div className='todo'></div>
+      </div>
     )
 }
 

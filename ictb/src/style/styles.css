@@ -36,6 +36,7 @@ margin: 0;
 
 /* Sidebar (channels) */
 .sidebar {
+    
     width: 250px;
     background-color: #350D36;
     color: #ddd;
@@ -72,6 +73,7 @@ margin: 0;
 }
 
 .chat-header {
+    
     height: 55px;
     border-bottom: 1px solid #ddd;
     background-color: #f8f8f8;
