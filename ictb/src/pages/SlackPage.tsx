@@ -3,6 +3,8 @@ import Todo from "./todo/Todo";
 import BoardList from "./board/BoardList";
 import AutoAwesomeMosaicIcon from "@mui/icons-material/AutoAwesomeMosaic";
 import LostFound from "./lostfound/LostFound";
+import LostList from './lost/LostList';
+import LostForm from './lost/LostForm';
 
 interface LayoutProps {
   children: React.ReactNode;
