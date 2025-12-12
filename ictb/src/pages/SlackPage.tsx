@@ -76,7 +76,7 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
           {children}
         </div>
       </div>
-      
+
       {/* <div className="todo"></div> */}
     </div>
   );

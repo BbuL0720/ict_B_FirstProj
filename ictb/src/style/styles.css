@@ -1,98 +1,94 @@
-*{
-padding: 0;
-margin: 0;
-}
-/* General layout */
-.slack-container {
-    height: 100vh;
-    overflow: hidden;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-/* Workspace bar (left-most) */
+.slack-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .workspace-bar {
-    width: 70px;
-    background-color: #3F0E40;
-    color: white;
-    padding-top: 20px;
-    position: relative;
+  width: 7vh;
+  background-color: #3f0e40;
+  color: white;
+  padding-top: 2vh;
+  position: relative;
 }
 
 .workspace-icon {
-    background: #611f69;
-    width: 45px;
-    height: 45px;
-    border: 2px solid #611f69;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+  background: #611f69;
+  width: 4.5vh;
+  height: 4.5vh;
+  border: 0.2vh solid #611f69;
+  border-radius: 1.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
-.workspace-icon:hover{
-    border: 2px solid #603762;
-    background: #603762;
+.workspace-icon:hover {
+  border: 0.2vh solid #603762;
+  background: #603762;
 }
 
-/* Sidebar (channels) */
 .sidebar {
-    
-    width: 250px;
-    background-color: #350D36;
-    color: #ddd;
-    overflow-y: auto;
+  width: 25vh;
+  background-color: #350d36;
+  color: #ddd;
+  overflow-y: auto;
 }
 
 .sidebar .nav-link {
-    color: #ddd;
-    padding: 5px 0;
-    margin-left: 5px;
-    font-size: 0.9rem;
+  color: #ddd;
+  padding: 0.5vh 0;
+  margin-left: 0.5vh;
+  font-size: 0.9rem;
 }
 
 .sidebar .nav-link.active,
 .sidebar .nav-link:hover {
-    color: white;
+  color: white;
 }
 
 .section-title {
-    font-size: 0.8rem;
-    opacity: 0.6;
-    text-transform: uppercase;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-transform: uppercase;
 }
 
 .workspace-title {
-    font-size: 1.2rem;
-    color: white;
+  font-size: 1.2rem;
+  color: white;
 }
 
 .chat-area {
-    flex-grow: 1;
-    display: flex;
-    background-color: white;
+  flex-grow: 1;
+  display: flex;
+  background-color: white;
 }
 
 .chat-header {
-    
-    height: 55px;
-    border-bottom: 1px solid #ddd;
-    background-color: #f8f8f8;
+  height: 5.5vh;
+  border-bottom: 0.1vh solid #ddd;
+  background-color: #f8f8f8;
 }
 
 .channel-title {
-    font-size: 1.1rem;
-    font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .input-area {
-    border-top: 1px solid #ddd;
+  border-top: 0.1vh solid #ddd;
 }
 
 .search-box {
-    width: 200px;
+  width: 20vh;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
 .nanum-gothic-regular {
   font-family: "Nanum Gothic", sans-serif;
@@ -101,15 +97,15 @@ margin: 0;
 }
 
 @font-face {
-    font-family: 'Paperozi';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
+  font-family: "Paperozi";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 
-.no-style{
-    background-color: #3F0E40;
-    border:none;
-    color: white;
+.no-style {
+  background-color: #3f0e40;
+  border: none;
+  color: white;
 }
-

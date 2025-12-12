@@ -1,34 +1,30 @@
 import React from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import "./todo.css"
+import "./todo.css";
 
 const Todo: React.FC = () => {
   const todosubmit = () => {
     console.log("TODO입력");
-  }
+  };
   const [date, setDate] = React.useState<any>(new Date());
   return (
     <div>
       <h1 className="text-center">React Calendar</h1>
-      <div className="app" style={{ display: 'flex', justifyContent: 'center' }}>
-
+      <div
+        className="app"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
         <div className="calendar-container">
           <Calendar onChange={setDate} value={date} />
 
           <div className="todo-input">
             <div className="todo-container">
-              <div className="todo-title">오늘의 할일</div>
-
-              {/* Todo 입력창 + 리스트 UI */}
               <div className="todo-box">
-
                 <div className="todo-header">
-                  <div className="menu-icon">≡</div>
                   <div className="todo-title">Todo List</div>
                 </div>
 
-                {/* 입력창 */}
                 <div className="todo-input-area">
                   <input
                     type="text"
@@ -38,7 +34,6 @@ const Todo: React.FC = () => {
                   <button className="todo-add-btn">＋</button>
                 </div>
 
-                {/* 리스트 */}
                 <ul className="todo-list">
                   <li className="todo-item">
                     <input type="checkbox" defaultChecked />
@@ -67,22 +62,15 @@ const Todo: React.FC = () => {
                     </div>
                   </li>
                 </ul>
-
               </div>
-
-
             </div>
           </div>
         </div>
-
-
-
       </div>
       <p className="text-center">
         <span className="bold">Selected Date:</span> {date.toDateString()}
       </p>
     </div>
-
   );
 };
 
