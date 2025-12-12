@@ -11,8 +11,8 @@ interface LayoutProps {
 const SlackPage: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
-      <div style={{ position: "fixed" }}>
-        <div className="slack-container d-flex">
+      <div>
+        <div className="slack-container d-flex" style={{ position: "fixed" }}>
           <div className="workspace-bar d-flex flex-column align-items-center">
             <button className="no-style">
               <span className="workspace-icon" style={{ color: "#d7c4daff" }}>
@@ -68,31 +68,16 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
             </div>
           </div>
 
-          <div className="chat-area d-flex flex-column">
+          {/* <div className="chat-area d-flex flex-column">
             <div className="chat-header d-flex justify-content-between align-items-center px-3">
               <div className="channel-title"># 자유게시판</div>
-              <input
-                className="form-control search-box"
-                placeholder="Search..."
-              />
             </div>
-
-            {/* <div className="messages p-3 flex-grow-1">
-            <div className="message mb-3">
-                <strong>John</strong> <span className="text-muted small">10:12 AM</span>
-                <div>Hello team! 👋</div>
-            </div>
-
-            <div className="message mb-3">
-                <strong>You</strong> <span className="text-muted small">10:13 AM</span>
-                <div>Hi John!</div>
-            </div>
-        </div> */}
-            {children}
-          </div>
+          </div> */}
+          {children}
         </div>
       </div>
-      <div className="todo"></div>
+      
+      {/* <div className="todo"></div> */}
     </div>
   );
 };
