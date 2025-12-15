@@ -17,7 +17,7 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <div>
-        <div className="slack-container d-flex" style={{ position: "fixed" }}>
+        <div className="slack-container d-flex" style={{ position: "fixed", width: "100%", height: "100vh" }}>
           <div className="workspace-bar d-flex flex-column align-items-center">
             <Link to="/board" className="no-style">
               <span className="workspace-icon" style={{ color: "#d7c4daff" }}>
@@ -74,17 +74,11 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
               <a className="nav-link text-hover"># 건의사항</a>
             </div>
           </div>
-
-          {/* <div className="chat-area d-flex flex-column">
-            <div className="chat-header d-flex justify-content-between align-items-center px-3">
-              <div className="channel-title"># 자유게시판</div>
-            </div>
-          </div> */}
-          {children}
+          <div style={{ flex: 1, overflow: "auto" }}>
+            {children}
+          </div>
         </div>
       </div>
-
-      {/* <div className="todo"></div> */}
     </div>
   );
 };
