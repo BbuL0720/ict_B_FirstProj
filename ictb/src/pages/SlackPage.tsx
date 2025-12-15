@@ -5,6 +5,7 @@ import AutoAwesomeMosaicIcon from "@mui/icons-material/AutoAwesomeMosaic";
 import LostFound from "./lostfound/LostFound";
 import LostList from './lost/LostList';
 import LostForm from './lost/LostForm';
+import { Link } from "react-router-dom";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,7 +17,7 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
       <div>
         <div className="slack-container d-flex" style={{ position: "fixed" }}>
           <div className="workspace-bar d-flex flex-column align-items-center">
-            <button className="no-style">
+            <Link to="/board" className="no-style">
               <span className="workspace-icon" style={{ color: "#d7c4daff" }}>
                 <AutoAwesomeMosaicIcon />
               </span>
@@ -26,8 +27,8 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
               >
                 게시판
               </p>
-            </button>
-            <button className="no-style">
+            </Link>
+            <Link to="/todo" className="no-style" >
               <span className="workspace-icon" style={{ color: "#d7c4daff" }}>
                 <AutoAwesomeMosaicIcon />
               </span>
@@ -37,8 +38,8 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
               >
                 ToDo
               </p>
-            </button>
-            <button className="no-style">
+            </Link>
+            <Link to="/lost" className="no-style">
               <span className="workspace-icon" style={{ color: "#d7c4daff" }}>
                 <AutoAwesomeMosaicIcon />
               </span>
@@ -48,7 +49,7 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
               >
                 찾아용
               </p>
-            </button>
+            </Link>
           </div>
 
           <div className="sidebar p-3 nanum-gothic-regular">

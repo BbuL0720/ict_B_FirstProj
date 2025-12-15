@@ -12,21 +12,28 @@ import Header from "./pages/Header";
 import Login from "./pages/login/Login";
 import Todo from "./pages/todo/Todo";
 import SlackPage from "./pages/SlackPage";
+import LostList from "./pages/lost/LostList";
+import Undo from "./pages/undo/Undo";
 
 function App() {
-  let isLogin = true;
+  let isLogin = true; //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯
+
   return (
     <Router>
       {/* {isLogin && <Header />} */}
-      <SlackPage>
+      {isLogin ? (
         <Routes>
-          <Route
-            path="/"
-            element={isLogin ? <Todo /> : <Navigate to="/login" replace />}
-          />
-          {/* <Route path="/" element={<Todo />} /> */}
+          <Route path="/" element={<Todo />} />
+          <Route path="/todo" element={<Todo />} />
+          <Route path="/board" element={<BoardList />} />
+          <Route path="/lost" element={<LostList />} />
         </Routes>
-      </SlackPage>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="*" element={<Undo />} />
+        </Routes>
+      )}
     </Router>
   );
 }

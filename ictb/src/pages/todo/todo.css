@@ -1,5 +1,5 @@
 .react-calendar {
-  margin: 40px 40px;
+  margin: 40px 20px;
   width: 1000px;
   height: 700px;
   width: calc(100% - 260px);
@@ -189,7 +189,7 @@ abbr[title] {
   background: #7a44e0;
 }
 .todo-input {
-  margin-top: 40px;
+  margin: 40px 20px;
 }
 
 .todo-input-area {
