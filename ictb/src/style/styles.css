@@ -16,6 +16,7 @@
   position: relative;
 }
 
+
 .workspace-icon {
   background: #611f69;
   width: 4.5vh;
@@ -108,4 +109,18 @@
   background-color: #3f0e40;
   border: none;
   color: white;
+}
+
+.text-hover:hover {
+  color: #007bff; /* 글자색 변경 */
+  /* text-decoration: underline; /* 밑줄 추가 */
+  /* text-decoration-color: #007bff; 밑줄 색상 지정 */ 
+  font-weight: bold; /* 글자 굵기 변경 */
+}
+
+.menu1 :after {
+  width: 0;
+  height: 1vw;
+  background: #5d8cef;
+  left: 50%;
 }
