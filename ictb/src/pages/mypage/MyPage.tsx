@@ -1,6 +1,6 @@
 import React from 'react'
 
-const StudyInfo: React.FC = () => {
+const MyPage: React.FC = () => {
   return (
     <div>
       asdf
@@ -8,4 +8,4 @@ const StudyInfo: React.FC = () => {
   )
 }
 
-export default StudyInfo
+export default MyPage
