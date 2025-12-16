@@ -80,6 +80,19 @@ const BoardList: React.FC = () => {
 						<td>2025-12-25</td>
 					</tr>
 				</tbody>
+				<tfoot>
+					<tr>
+						<td colSpan={4} className='text-center'>
+							<button type="button" className="btn btn-dark mx-2">◀</button>
+							<button type="button" className="btn btn-outline-dark mx-2">1</button>
+							<button type="button" className="btn btn-outline-dark mx-2">2</button>
+							<button type="button" className="btn btn-outline-dark mx-2">3</button>
+							<button type="button" className="btn btn-outline-dark mx-2">4</button>
+							<button type="button" className="btn btn-outline-dark mx-2">5</button>
+							<button type="button" className="btn btn-dark mx-2">▶</button>
+						</td>
+					</tr>
+				</tfoot>
 			</table>
 		</div>
 	)
