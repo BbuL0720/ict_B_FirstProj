@@ -111,6 +111,10 @@
   color: white;
 }
 
+.card-body{
+	padding: 11px;
+}
+
 .text-hover:hover {
   color: #007bff; /* 글자색 변경 */
   /* text-decoration: underline; /* 밑줄 추가 */
