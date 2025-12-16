@@ -3,7 +3,7 @@ import React from 'react'
 const Login: React.FC = () => {
   // 로그인 세션 (spring처리)
   return (
-     <div className="login-page bg-light">
+     <div className="login-page bg-light min-vh-100 d-flex align-items-center">
         <div className="container">
             <div className="row">
                 <div className="col-lg-10 offset-lg-1">
@@ -50,7 +50,10 @@ const Login: React.FC = () => {
                                 <div className="form-right h-100 text-white text-center pt-5"
                                 style={{backgroundColor:'#7a44e0', borderBottomRightRadius:'25px', borderTopRightRadius:'25px'}}>
                                     <i className="bi bi-bootstrap"></i>
-                                    <h2 className="fs-1">환영합니다</h2>
+                                    <h2 className="fs-1" style={{marginTop:'45px    '}}>나만의 캠퍼스</h2>
+                                    
+                                    <img src="img/logoW.png" style={{width:'150px', height:'auto'}} />
+                                    
                                 </div>
                             </div>
                         </div>
