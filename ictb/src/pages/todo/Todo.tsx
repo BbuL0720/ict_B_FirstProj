@@ -2,6 +2,8 @@ import React from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./todo.css";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Todo: React.FC = () => {
   const todosubmit = () => {
@@ -36,29 +38,26 @@ const Todo: React.FC = () => {
 
                 <ul className="todo-list">
                   <li className="todo-item">
-                    <input type="checkbox" defaultChecked />
                     <span className="checked">Lunch</span>
                     <div className="actions">
-                      <i className="edit">✎</i>
-                      <i className="delete">🗑</i>
+                      <i className="edit"><EditIcon /></i>
+                      <i className="delete"><DeleteIcon /></i>
                     </div>
                   </li>
 
                   <li className="todo-item">
-                    <input type="checkbox" />
                     <span>Dinner</span>
                     <div className="actions">
-                      <i className="edit">✎</i>
-                      <i className="delete">🗑</i>
+                      <i className="edit"><EditIcon /></i>
+                      <i className="delete"><DeleteIcon /></i>
                     </div>
                   </li>
 
                   <li className="todo-item">
-                    <input type="checkbox" />
                     <span>Snacks</span>
                     <div className="actions">
-                      <i className="edit">✎</i>
-                      <i className="delete">🗑</i>
+                      <i className="edit"><EditIcon /></i>
+                      <i className="delete"><DeleteIcon /></i>
                     </div>
                   </li>
                 </ul>

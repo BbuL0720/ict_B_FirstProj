@@ -4,14 +4,10 @@ import { json } from 'stream/consumers';
 
 const BoardList: React.FC = () => {
 	return (
-		<div className='container d-flex flex-column justify-content-center' style={{maxWidth:'900px'}}>
+		<div className='container d-flex flex-column justify-content-center' style={{ maxWidth: '900px' }}>
 			{/* <h2>#board</h2> */}
 
-			<div className="display-4 mx-auto my-4">큰 글씨 텍스트</div>
-
-			<p className='fs-5 d-flex justify-content-evenly'>
-				<div>자유 게시판</div><div className='text-decoration-underline'>정보 공유</div><div>홍보 게시판</div><div>동아리</div>
-			</p>
+			<div className="display-4 mx-auto my-4">subtitle 제목</div>
 
 			<table className="table table-striped table-hover">
 				<thead>
@@ -25,7 +21,7 @@ const BoardList: React.FC = () => {
 				<tbody>
 					<tr>
 						<td>17715</td>
-						<td>ㅈㄱㄴ</td>
+						<td><Link to={`/board/detail/1`}>ㅈㄱㄴ</Link></td>
 						<td>ㅇㅇ</td>
 						<td>2025-12-25</td>
 					</tr>
