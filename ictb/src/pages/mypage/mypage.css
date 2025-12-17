@@ -1,0 +1,97 @@
+/* 전체 레이아웃 */
+.mypage {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.mypage-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* 카드 스타일 */
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background: #fff;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* 입력 필드 */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.field label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.field input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.field input:read-only {
+  background: #f9fafb;
+  color: #6b7280;
+}
+
+/* 버튼 */
+.btn {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: #9d76e6;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  background: #e5e7eb;
+}
+.emailfix button{   
+    width: 20%;
+    background: #9d76e6;      
+}
+.emailfix button:hover{
+    background: #e5e7eb;
+}
+
+/* 회원 탈퇴 */
+.card.danger {
+  border-color: #fecaca;
+  background: #fff5f5;
+}
+
+.btn.danger {
+  background: #dc2626;
+  color: #fff;
+}
+
+.card.danger p {
+  font-size: 13px;
+  color: #7f1d1d;
+  margin-bottom: 12px;
+}
+/* 배경 */
+body{
+    background-color: #ded5e00e;
+}

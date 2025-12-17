@@ -1,6 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Login: React.FC = () => {
+    const signupClick = () => {
+        
+    }
   // 로그인 세션 (spring처리)
   return (
      <div className="login-page bg-light min-vh-100 d-flex align-items-center">
@@ -39,8 +43,10 @@ const Login: React.FC = () => {
                                             <div className="col-sm-6">
                                                 <a href="#" className="float-end" style={{color:'#7a44e0'}}>비밀번호를 잊어버렸어요</a>
                                             </div>
-
-                                            <div className="col-12">
+                                            <div className="col-12 d-flex justify-content-between">
+                                                <button type="submit" className="btn px-4 float-end mt-4" style={{backgroundColor:'#fff', border:'1px solid #7a44e0'}}>
+                                                    <Link to={`/signup`} style={{textDecoration:'none', color:'#7a44e0'}}>회원가입</Link>
+                                                    </button>
                                                 <button type="submit" className="btn px-4 float-end mt-4" style={{color:'white', backgroundColor:'#7a44e0'}}>로그인</button>
                                             </div>
                                     </form>
@@ -50,9 +56,9 @@ const Login: React.FC = () => {
                                 <div className="form-right h-100 text-white text-center pt-5"
                                 style={{backgroundColor:'#7a44e0', borderBottomRightRadius:'25px', borderTopRightRadius:'25px'}}>
                                     <i className="bi bi-bootstrap"></i>
-                                    <h2 className="fs-1" style={{marginTop:'45px    '}}>나만의 캠퍼스</h2>
+                                    <h2 className="fs-1" style={{marginTop:'45px'}}>나만의 캠퍼스</h2>
                                     
-                                    <img src="img/logoW.png" style={{width:'150px', height:'auto'}} />
+                                    <img src="/img/logoW.png" style={{width:'150px', height:'auto'}} />
                                     
                                 </div>
                             </div>
