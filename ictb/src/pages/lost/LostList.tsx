@@ -21,12 +21,12 @@ const LostList: React.FC = () => {
                         {
                             lostItems.map((item) => (
                                 // useparam 파라미터 받아서 id에쓰기 
-                                <Link to={"/lost/detail/1"} className="col">
+                                <Link to={"/lost/detail/1"} className="col" style={{textDecoration:'none'}}>
                                     <div className="card shadow-sm">
                                         <div className="bd-placeholder-img card-img-top" >
                                             {
                                                 item.image !== '' ? <img src={item.image} width='100%' height='225' /> :
-                                                    <img src='img/grey.png' width='100%' height='225' />
+                                                    <img src='/img/nophoto.png' width='100%' height='225' />
                                             }
                                         </div>
                                         <div className="card-body">
