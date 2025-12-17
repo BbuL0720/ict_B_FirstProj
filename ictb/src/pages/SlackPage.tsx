@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AutoAwesomeMosaicIcon from "@mui/icons-material/AutoAwesomeMosaic";
 import { Link, useLocation } from "react-router-dom";
+import Header from "./Header";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,10 +18,11 @@ interface subTitle {
 }
 
 const SlackPage: React.FC<LayoutProps> = ({ children }) => {
-  const [title, setTitle] = useState<LayoutTab | null>(null)
+ 
   const board = { title: '게시판', param: '/board/list', subTitle: [{ id: 1, param: '/1', subtitle: '자유 게시판' }, { id: 2, param: '/2', subtitle: '정보 공유' }, { id: 1, param: '/3', subtitle: '홍보 게시판' }] }
   const todo = { title: 'TODO', subTitle: [{ id: 1, subtitle: '자유 게시판' }, { id: 1, subtitle: '정보 공유' }, { id: 1, subtitle: '홍보 게시판' }] }
   const lost = { title: '찾아용', param: '/lost/list', subTitle: [{ id: 1, param: '/1', subtitle: '잃어버렸어요' }, { id: 1, param: '/2', subtitle: '발견했어요' }] }
+   const [title, setTitle] = useState<LayoutTab>(board)
   const location = useLocation();
   // useEffect(() => {
   //   console.log(location)
@@ -111,7 +113,8 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
 
 
           <div style={{ flex: 1, overflow: "auto" }}>
-            {children}
+            <Header title={title?.title}/>
+            {children}      
           </div>
         </div>
       </div>

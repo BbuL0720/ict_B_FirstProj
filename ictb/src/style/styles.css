@@ -133,3 +133,25 @@
   background: #5d8cef;
   left: 50%;
 }
+
+/* Header.tsx css */
+.mypagebutton{
+  color: white;
+  text-decoration: none;
+}
+
+.mypagebutton:visited{
+  color: white;
+}
+.myshowstyle{
+             position: relative;
+              width: 30px;
+              height: 30px;
+              border-radius:50%;
+              background: #9d76e6;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor:pointer;
+}

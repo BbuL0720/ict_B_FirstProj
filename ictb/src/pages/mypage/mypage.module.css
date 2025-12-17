@@ -6,7 +6,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.mypage-title {
+.mypagetitle {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 24px;
@@ -53,7 +53,7 @@
 }
 
 /* 버튼 */
-.btn {
+.fix {
   width: 100%;
   height: 44px;
   border: none;
@@ -63,7 +63,7 @@
   cursor: pointer;
 }
 
-.btn:hover {
+.fix:hover {
   opacity: 0.9;
   background: #e5e7eb;
 }
@@ -75,22 +75,6 @@
     background: #e5e7eb;
 }
 
-/* 회원 탈퇴 */
-.card.danger {
-  border-color: #fecaca;
-  background: #fff5f5;
-}
-
-.btn.danger {
-  background: #dc2626;
-  color: #fff;
-}
-
-.card.danger p {
-  font-size: 13px;
-  color: #7f1d1d;
-  margin-bottom: 12px;
-}
 /* 배경 */
 body{
     background-color: #ded5e00e;
