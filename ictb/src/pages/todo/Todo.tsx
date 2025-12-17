@@ -12,11 +12,8 @@ const Todo: React.FC = () => {
   const [date, setDate] = React.useState<any>(new Date());
   return (
     <div>
-      <h1 className="text-center">React Calendar</h1>
-      <div
-        className="app"
-        style={{ display: "flex", justifyContent: "center" }}
-      >
+      <h1 className="text-center" style={{height:'100px'}}>React Calendar</h1>
+      <div className="app" style={{ display: "flex", justifyContent: "center" }} >
         <div className="calendar-container">
           <Calendar onChange={setDate} value={date} />
 
