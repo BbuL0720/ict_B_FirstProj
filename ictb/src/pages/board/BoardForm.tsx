@@ -1,5 +1,6 @@
-import { colors } from '@mui/material';
+import { Button, colors } from '@mui/material';
 import React, { useState } from 'react'
+// import style from "./board.module.css";  
 
 interface FormData {
 	title: string;
@@ -61,7 +62,7 @@ const BoardForm: React.FC = () => {
 							<input type='text' id='contents' name='contents' onChange={formChange} className="form-control mt-2" placeholder="제목" />
 							<textarea id='writer' name='writer' className="form-control mt-2" rows={10} placeholder="내용" />
 							<div>
-								<button className="btn btn-primary mt-2" type="submit">등록</button>
+								<button className="btn btn-primary mt-2"  type="submit" >등록</button>
 							</div>
 						</div>
 					</div>
