@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import  "../style/styles.css"
 
-interface HeaderProps {
-  title?: string;
-  subTitle?:Array<string>;
+interface sideProps {
+  title:string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC<sideProps> = ({ title }) => {
   const [showInfo, setShowInfo] = useState(false);
   const showmypage = () =>{
 

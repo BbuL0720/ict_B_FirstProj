@@ -22,13 +22,15 @@ const Home: React.FC = () => {
     const dummyData = [
         { id: 1, title: "부트스트랩과 리액트로 멋진 웹앱을 만드는 방법", date: "2025.12.27" },
         { id: 2, title: "CSS 말줄임표(ellipsis) 적용하는 꿀팁", date: "2025.12.26" },
-        { id: 3, title: "공지사항입니다. 꼭 확인해 주세요!", date: "2025.11.25" }
+        { id: 3, title: "공지사항입니다. 꼭 확인해 주세요!", date: "2025.12.25" },
+        { id: 4, title: "헐.. 내일 수업 휴강이래 대박 ㅋㅋㅋㅋ", date: "2025-12-16"}
     ];
 
     const lostDummyData = [
         { id: 1, title: "아이폰16 분실했어요", date: "2025.12.27" },
         { id: 2, title: "갤럭시 잃어버렸어요", date: "2025.12.26" },
-        { id: 3, title: "카페에서 맥북 보신 분", date: "2025.11.25" }
+        { id: 3, title: "카페에서 맥북 보신 분", date: "2025.11.25" },
+        { id: 4, title: "키링 발견하신 분 ㅜㅜ", date: "2025.11.25" }
     ];
 
     const settings = {
@@ -123,7 +125,6 @@ const Home: React.FC = () => {
                                     <div className="todo-title text-center" style={{ marginTop: '0px' }}>게시판</div>
                                 </div>
                                 <div className="board-widget border rounded p-3" style={{ maxWidth: '500px' }}>
-                                    <h6 className="fw-bold mb-3">최신 게시글</h6>
                                     <ul className="list-unstyled mb-0">
                                         {dummyData.map((post) => (
                                             <li key={post.id} className="d-flex justify-content-between align-items-center mb-2" >
@@ -153,7 +154,6 @@ const Home: React.FC = () => {
                                     <div className="todo-title text-center" style={{ marginTop: '0px' }}>분실물</div>
                                 </div>
                                 <div className="board-widget border rounded p-3" style={{ maxWidth: '500px' }}>
-                                    <h6 className="fw-bold mb-3">최신 게시글</h6>
                                     <ul className="list-unstyled mb-0">
                                         {lostDummyData.map((post) => (
                                             <li key={post.id} className="d-flex justify-content-between align-items-center mb-2" >

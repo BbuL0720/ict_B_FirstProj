@@ -42,7 +42,8 @@ function App() {
 
             <Route path="/board/:kind/list" element={<BoardList />} />
             <Route path="/board/:kind/detail/:id" element={<BoardDetail />} />
-            <Route path="/board/:kind/form" element={<BoardForm />} />
+            <Route path="/board/write" element={<BoardForm />} />
+            {/* <Route path="/board/:kind/form" element={<BoardForm />} /> */}
 
             <Route path="/todo" element={<Todo />} />
 

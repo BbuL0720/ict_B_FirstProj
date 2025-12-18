@@ -1,5 +1,7 @@
 import { Button, colors } from '@mui/material';
 import React, { useState } from 'react'
+import { useParams, Link } from 'react-router-dom';
+import { allBoardData } from './boardDummy';
 // import style from "./board.module.css";  
 
 interface FormData {
@@ -10,6 +12,7 @@ interface FormData {
 }
 
 const BoardForm: React.FC = () => {
+	
 
 	const [formData, setFormData] = useState<FormData>({
 		title: '',

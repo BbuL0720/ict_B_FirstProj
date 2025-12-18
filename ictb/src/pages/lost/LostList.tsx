@@ -7,8 +7,6 @@ const lostItems = [
     { id: 4, title: '강아지', image: '/img/pup.jpg', contents: '강아지를 잃어버렸어요' },
     { id: 5, title: '레드판다', image: '/img/redpan.jpg', contents: '레드판다를 잃어버렸어요' },
     { id: 6, title: '핸드폰', image: '', contents: '핸드폰을 잃어버렸어요' },
-    { id: 7, title: '핸드폰1', image: '', contents: '핸드폰을 잃어버렸어요' },
-    { id: 8, title: '핸드폰2', image: '', contents: '핸드폰을 잃어버렸어요' }
 ]
 
 const LostList: React.FC = () => {
@@ -44,6 +42,32 @@ const LostList: React.FC = () => {
                             ))
                         }
                     </div>
+                    <div className="d-flex justify-content-between align-items-center mt-4"
+                                            style={{ position: 'relative' }}>
+                                            <div className="mx-auto" style={{ position: 'absolute', left: '40%' }}>
+                                                <nav aria-label="...">
+                                                    <ul className="pagination mb-0">
+                                                        <li className="page-item disabled">
+                                                            <a className="page-link" href="#" tabIndex={-1} aria-disabled="true">이전</a>
+                                                        </li>
+                                                        <li className="page-item active" aria-current="page"><a className="page-link" href="#">1</a></li>
+                                                        <li className="page-item">
+                                                            <a className="page-link" href="#">2</a>
+                                                        </li>
+                                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                                        <li className="page-item">
+                                                            <a className="page-link" href="#">다음</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <div className="d-flex">
+                                                <input type="text" className="form-control me-2" placeholder="검색어를 입력하세요" style={{ width: '200px' }} />
+                                                <button type="button" className="btn btn-primary">검색</button>
+                                            </div>
+                                            <button type="button" className="btn btn-primary"><Link to={`/lost/form`} style={{ textDecoration: 'none', color: 'white' }}>글쓰기</Link></button>
+                    
+                                        </div>
                 </div>
             </div>
         </div>

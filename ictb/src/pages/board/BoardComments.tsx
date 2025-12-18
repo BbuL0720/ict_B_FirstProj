@@ -21,7 +21,7 @@ const BoardComments: React.FC = () => {
 							<div className="fw-bold">
 								닉네임 <span className="badge bg-primary rounded-pill">대댓 수</span>
 							</div>
-							qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+							ㅋㅋㅋㅋㅋㅋ
 						</div>
 						<div className='ms-4 d-flex flex-column align-items-end justify-content-between'>
 							<span>2025-12-25</span>
@@ -35,7 +35,7 @@ const BoardComments: React.FC = () => {
 							<div className="fw-bold">
 								닉네임 <span className="badge bg-primary rounded-pill">대댓 수</span>
 							</div>
-							qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+							유용한 정보네요!
 						</div>
 						<div className='ms-4 d-flex flex-column align-items-end justify-content-between'>
 							<span>2025-12-25</span>
@@ -49,7 +49,7 @@ const BoardComments: React.FC = () => {
 									<div className="fw-bold">
 										닉네임 <span className="badge bg-primary rounded-pill">대댓 수</span>
 									</div>
-									qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+									인정합니다
 								</div>
 								<div className='ms-4 d-flex flex-column align-items-end justify-content-between'>
 									<span>2025-12-25</span>
@@ -57,78 +57,7 @@ const BoardComments: React.FC = () => {
 								</div>
 							</div>
 						</li>
-						<li className="list-group-item">
-							<div className="d-flex justify-content-between">
-								<div className="text-break ms-2 me-auto">
-									<div className="fw-bold">
-										닉네임 <span className="badge bg-primary rounded-pill">대댓 수</span>
-									</div>
-									qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-								</div>
-								<div className='ms-4 d-flex flex-column align-items-end justify-content-between'>
-									<span>2025-12-25</span>
-									<span>192.168.XXX.XXX</span>
-								</div>
-							</div>
-							<ol className="ms-5 list-group list-unstyled d-flex justify-content-center mt-3">
-								<li className="list-group-item">
-									<div className="d-flex justify-content-between">
-										<div className="text-break ms-2 me-auto">
-											<div className="fw-bold">
-												닉네임
-											</div>
-											qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-										</div>
-										<div className='ms-4 d-flex flex-column align-items-end justify-content-between'>
-											<span>2025-12-25</span>
-											<span>192.168.XXX.XXX</span>
-										</div>
-									</div>
-								</li>
-								<li className="list-group-item">
-									<div className="d-flex justify-content-between">
-										<div className="text-break ms-2 me-auto">
-											<div className="fw-bold">
-												닉네임
-											</div>
-											qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-										</div>
-										<div className='ms-4 d-flex flex-column align-items-end justify-content-between'>
-											<span>2025-12-25</span>
-											<span>192.168.XXX.XXX</span>
-										</div>
-									</div>
-								</li>
-							</ol>
-						</li>
-						<li className="list-group-item">
-							<div className="d-flex justify-content-between">
-								<div className="text-break ms-2 me-auto">
-									<div className="fw-bold">
-										닉네임 <span className="badge bg-primary rounded-pill">대댓 수</span>
-									</div>
-									qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-								</div>
-								<div className='ms-4 d-flex flex-column align-items-end justify-content-between'>
-									<span>2025-12-25</span>
-									<span>192.168.XXX.XXX</span>
-								</div>
-							</div>
-						</li>
-						<li className="list-group-item">
-							<div className="d-flex justify-content-between">
-								<div className="text-break ms-2 me-auto">
-									<div className="fw-bold">
-										닉네임 <span className="badge bg-primary rounded-pill">대댓 수</span>
-									</div>
-									qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-								</div>
-								<div className='ms-4 d-flex flex-column align-items-end justify-content-between'>
-									<span>2025-12-25</span>
-									<span>192.168.XXX.XXX</span>
-								</div>
-							</div>
-						</li>
+						
 					</ol>
 				</li>
 			</ol>
