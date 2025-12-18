@@ -69,7 +69,7 @@ const Home: React.FC = () => {
 
 
                         </div>
-                        <img src="img/img1.png" alt="" />
+                        <img src="img/img1.png" style={{padding: '50px'}} />
                     </div>
 
                 </div>
