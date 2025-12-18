@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AutoAwesomeMosaicIcon from "@mui/icons-material/AutoAwesomeMosaic";
-import { Link, useLocation, useParams } from "react-router-dom";
-
-interface LayoutProps {
-	children?: React.ReactNode;
-}
+import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 interface Title {					//메인 아이템(한개)
 	title: string;
@@ -15,6 +12,10 @@ interface Title {					//메인 아이템(한개)
 interface SubTitle {				//세부 아이템(한개)
 	subTitle: string;
 	url_sub: string;
+}
+interface LayoutProps {
+  children: React.ReactNode;
+  onLogout: () => void; 
 }
 
 const sideItems: Title[] = [		//본격 더미데이터(메인 아이템들)
@@ -37,11 +38,17 @@ const sideItems: Title[] = [		//본격 더미데이터(메인 아이템들)
 	}
 ]
 
-const SlackPage: React.FC<LayoutProps> = ({ children }) => {
+const SlackPage: React.FC<LayoutProps> = ({ children, onLogout }) => {
 
 	const locArray = useLocation().pathname.split('/');
 	const url_main = locArray[1];
 	const url_sub = locArray[2];
+
+  const navigate = useNavigate();
+  const handleLogout = () => {
+      onLogout();
+      navigate("/login");
+  };
 
 	return (
 		<div>
@@ -60,10 +67,10 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
 								))
 							}
 						</div>
-						<div className="p-1 mb-4" style={{ fontFamily: "Paperozi", fontSize: "13px" }}>
-							<Link to="/logout">로그아웃</Link>
+						<div className="p-1 mb-4" style={{ fontFamily: "Paperozi", fontSize: "13px" }} onClick={handleLogout}>
+              로그아웃</div>
 						</div>
-					</div>
+					
 
 					{
 						sideItems.map((e) => ( e.url_main === url_main ? 
@@ -83,7 +90,7 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+      </div>
 	);
 };
 

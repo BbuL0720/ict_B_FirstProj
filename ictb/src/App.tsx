@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navigate,
   Route,
@@ -19,16 +19,25 @@ import BoardForm from "./pages/board/BoardForm";
 import LostForm from "./pages/lost/LostForm";
 import LostDetail from "./pages/lost/LostDetail";
 import SlackPage from "./pages/SlackPage";
+import MyPage from "./pages/mypage/MyPage";
+import Home from "./MainPage/Home";
+
 
 function App() {
-  let isLogin = true; //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
+  const [isLogin, setIsLogin] = useState<boolean>(false); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
+
+  const handleLogout = () => {
+    setIsLogin(false);
+  };
 
   return (
     <Router>
       {/* {isLogin && <Header />} */}
       {isLogin ? (
-        <SlackPage>
+        <SlackPage onLogout={handleLogout}>
           <Routes>
+            <Route path='/mypage' element={<MyPage/>} />
+            <Route path='/home' element={<Home/>} />
             <Route path="/" element={<Navigate to="/board/list/1" replace />} />
 
             <Route path="/board/:kind/list" element={<BoardList />} />
@@ -47,7 +56,7 @@ function App() {
       ) : (
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login onLogin={()=>setIsLogin(true)}/>} />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<Undo />} />
         </Routes>
