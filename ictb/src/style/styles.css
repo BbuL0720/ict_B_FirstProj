@@ -11,7 +11,7 @@
 
 .workspace-bar {
   width: 7vh;
-  background-color: #3f0e40;
+  background-color: #55439A;
   color: white;
   padding-top: 2vh;
   position: relative;
@@ -19,10 +19,10 @@
 
 
 .workspace-icon {
-  background: #611f69;
+  background: #a39eb4;
   width: 4.5vh;
   height: 4.5vh;
-  border: 0.2vh solid #611f69;
+  border: 0.2vh solid #55439A;
   border-radius: 1.2vh;
   display: flex;
   justify-content: center;
@@ -31,13 +31,13 @@
 }
 
 .workspace-icon:hover {
-  border: 0.2vh solid #603762;
-  background: #603762;
+  border: 0.2vh solid white;
+  background: #5632e6;
 }
 
 .sidebar {
   width: 25vh;
-  background-color: #350d36;
+  background-color: #5D4C9F;
   color: #ddd;
   overflow-y: auto;
 }
@@ -110,7 +110,7 @@
 
 .no-style {
   text-decoration: none;
-  background-color: #3f0e40;
+  background-color: #55439A;
   border: none;
   color: white;
   text-align: center;
