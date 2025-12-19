@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
 const lostItems = [
     { id: 1, title: '고양이군단', image: 'img/cat-bg.webp', contents: '고양이군단을 잃어버렸어요' },
@@ -22,7 +23,7 @@ const LostDetail: React.FC = () => {
                 <div className="row">
                     <div className="w-1200">
                             <header className="mb-4">
-
+                               
                                 <h1 className="fw-bolder mb-1">고양이를 잃어버렸어요!</h1>
 
                                 <div className="text-muted fst-italic mb-2">2025년 12월 9일에 작성된 글입니다</div>

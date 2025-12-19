@@ -46,13 +46,6 @@ const Home: React.FC = () => {
         autoplaySpeed: 3000, //넘기는 속도
         arrows: true //화살표 좌우
     }
-    //더미 데이터 추후에 연습문제 *****
-    const homeData = [
-        // { id: 1, img: "/img/bat.webp", text: "안녕하세요 ICTPassword!" },
-        // { id: 2, img: "/img/pup.jpg", text: "Spring & React 전문가 과정" },
-        // { id: 3, img: "/img/kitt.jpg", text: "함께 성장!!" }
-    ]
-
     return (
         <main style={{ backgroundImage: 'url(./img/Artboard1.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
