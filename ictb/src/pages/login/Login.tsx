@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 interface LoginProps {
@@ -20,8 +20,19 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     };
 
     const signupClick = () => {
-        
     }
+
+	const inputRef = useRef<HTMLInputElement>(null);
+	const focusInput = () => {
+		inputRef.current?.focus();
+	}
+
+	useEffect(() => {
+		focusInput();
+	},[]);
+
+
+
   // 로그인 세션 (spring처리)
   return (
      <div className="login-page bg-light min-vh-100 d-flex align-items-center">
@@ -38,7 +49,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                                                 <label>아이디<span className="text-danger">*</span></label>
                                                 <div className="input-group">
                                                     <div className="input-group-text"><i className="bi bi-person-fill"></i></div>
-                                                    <input type="text" className="form-control" placeholder="아이디를 입력하세요"
+                                                    <input ref={inputRef} type="text" className="form-control" placeholder="아이디를 입력하세요"
                                                     onChange={(e) => setUserId(e.target.value)} />
                                                 </div>
                                             </div>
@@ -60,7 +71,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                                             </div>
 
                                             <div className="col-sm-6">
-                                                <a href="#" className="float-end" style={{color:'#7a44e0'}}>비밀번호를 잊어버렸어요</a>
+                                                <a href="/forgot" className="float-end" style={{color:'#7a44e0'}}>비밀번호를 잊어버렸어요</a>
                                             </div>
                                             <div className="col-12 d-flex justify-content-between">
                                                 <button type="button" className="btn px-4 float-end mt-4" style={{backgroundColor:'#fff', border:'1px solid #7a44e0'}}>
