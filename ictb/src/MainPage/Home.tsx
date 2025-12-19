@@ -69,11 +69,14 @@ const Home: React.FC = () => {
                                 <img src="img/img1.png"  />
                             </div>
                              <div>
-                                <img src="img/img2.png" style={{padding:'0', margin:''}} />
+                                <img src="img/img2.png" />
                             </div>
-                            {/*<div>
-                                <img src="img/img3.png" style={{padding: '50px'}} />
-                            </div> */}
+                            <div>
+                                <img src="img/img3.png"  />
+                            </div>
+                            <div>
+                                <img src="img/img4.png"  />
+                            </div>
                         </Slider>
                     <div className="d-flex align-items-center justify-content-center position-absolute" style={{ height: '100%' }}>
                         <div className="mx-auto">
