@@ -19,6 +19,7 @@
   padding: 20px;
   margin-bottom: 24px;
   background: #fff;
+  
 }
 
 .card h2 {
@@ -61,18 +62,22 @@
   background: #9d76e6;
   font-size: 15px;
   cursor: pointer;
+  color: white;
 }
 
 .fix:hover {
   opacity: 0.9;
   background: #e5e7eb;
+  color: black;
 }
 .emailfix button{   
     width: 20%;
-    background: #9d76e6;      
+    background: #9d76e6;
+    color: white;     
 }
 .emailfix button:hover{
     background: #e5e7eb;
+    color: black;
 }
 
 /* 배경 */
