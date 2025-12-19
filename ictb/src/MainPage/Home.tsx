@@ -9,6 +9,7 @@
 import { Repeat } from '@mui/icons-material'
 import { url } from 'inspector'
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 //import "slick-carousel/slick/slick.css";
 //import "slick-carousel/slick/slick-theme.css";
@@ -20,10 +21,10 @@ import React from 'react'
 //conts/Hone.tsx
 const Home: React.FC = () => {
     const dummyData = [
-        { id: 1, title: "부트스트랩과 리액트로 멋진 웹앱을 만드는 방법", date: "2025.12.27" },
-        { id: 2, title: "CSS 말줄임표(ellipsis) 적용하는 꿀팁", date: "2025.12.26" },
-        { id: 3, title: "공지사항입니다. 꼭 확인해 주세요!", date: "2025.12.25" },
-        { id: 4, title: "헐.. 내일 수업 휴강이래 대박 ㅋㅋㅋㅋ", date: "2025-12-16"}
+        { id: 1, title: "헐.. 내일 수업 휴강이래 대박 ㅋㅋㅋㅋ", date: "2025.12.27" },
+        { id: 2, title: "점심 혼밥하기 좋은 곳 있나요? (중도 근처)", date: "2025.12.26" },
+        { id: 3, title: "팀플 잠수 탄 조원 어떻게 해야 하나요", date: "2025.12.25" },
+        { id: 4, title: "혹시 내일 교양 '현대 사회와 윤리' 같이 들으시는 분 계신가요?", date: "2025.12.16" }
     ];
 
     const lostDummyData = [
@@ -62,16 +63,16 @@ const Home: React.FC = () => {
 
                     <div className="d-flex align-items-center justify-content-center" style={{ height: '100%' }}>
                         <div className="mx-auto">
-                            <h1 className="fw-bolder" style={{ color: '#55439A', fontSize: '80px'}} >UNI-BASE</h1>
-                            <h3 className="fw-bold" style={{color: '#A03DA5'}}>Minimal Academic Life Platform</h3>
+                            <h1 className="fw-bolder" style={{ color: '#55439A', fontSize: '80px' }} >UNI-BASE</h1>
+                            <h3 className="fw-bold" style={{ color: '#A03DA5' }}>Minimal Academic Life Platform</h3>
                             <p className="lead text-muted"></p>
-                            <p className="lead text-muted" style={{fontStyle: 'italic', color: '#55439A'}}>
+                            <p className="lead text-muted" style={{ fontStyle: 'italic', color: '#55439A' }}>
                                 Designed to reduce noise in university life <br />
                                 - 대학생활 가장 필요한 것만 남기다.</p>
 
 
                         </div>
-                        <img src="img/img1.png" style={{padding: '50px'}} />
+                        <img src="img/img1.png" style={{ padding: '50px' }} />
                     </div>
 
                 </div>
@@ -83,13 +84,50 @@ const Home: React.FC = () => {
 
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
+
+                        <div className="col">
+                            <div style={{ backgroundColor: '#5D4C9F', borderRadius: '15px', color: 'white' }}>
+                                <div>
+                                    <Link to={'/board/free/list'} style={{ textDecoration: 'none' }}>
+                                        <div className="todo-title text-center" style={{ padding: '8px', color: 'white' }}>게시판</div>
+                                    </Link>
+                                </div>
+                                <div className="board-widget border rounded p-3" style={{ maxWidth: '500px' }}>
+                                    <ul className="list-unstyled mb-0">
+                                        {dummyData.map((post) => (
+                                            <Link to={`/board/free/detail/${post.id}`} style={{ textDecoration: 'none' }}>
+                                                <li className="d-flex justify-content-between align-items-center mb-2" >
+                                                    <span className="post-title" style={{
+                                                        flex: 1,
+                                                        whiteSpace: 'nowrap',
+                                                        overflow: 'hidden',
+                                                        textOverflow: 'ellipsis',
+                                                        marginRight: '15px',
+                                                        color: 'white'
+                                                    }}>
+                                                        {post.title}
+                                                    </span>
+                                                    <small style={{ flexShrink: 0, color: 'white' }}>
+                                                        {post.date}
+                                                    </small>
+                                                </li>
+                                            </Link>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div className="col" >
                             <div style={{ backgroundColor: '#6C5CA7', borderRadius: '15px', color: 'white' }}>
                                 <div className="">
-                                    <div className="todo-title text-center" style={{ marginTop: '0px' }}>Todo List</div>
+                                    <Link to={'/todo'} style={{ color: 'white', textDecoration: 'none' }}>
+                                        <div className="todo-title text-center" style={{
+                                            padding: '8px',
+                                            borderBottom: '1px soide white'
+                                        }}>Todo List</div>
+                                    </Link>
                                 </div>
-
-                                <ul className="todo-list">
+                                <ul className="todo-list border rounded p-3">
                                     <li className="todo-item">
                                         <input type="checkbox" defaultChecked />
                                         <span className="checked">Lunch</span>
@@ -120,58 +158,33 @@ const Home: React.FC = () => {
                             </div>
                         </div>
                         <div className="col">
-                            <div style={{ backgroundColor: '#5D4C9F', borderRadius: '15px', color: 'white' }}>
-                                <div className="">
-                                    <div className="todo-title text-center" style={{ marginTop: '0px' }}>게시판</div>
-                                </div>
-                                <div className="board-widget border rounded p-3" style={{ maxWidth: '500px' }}>
-                                    <ul className="list-unstyled mb-0">
-                                        {dummyData.map((post) => (
-                                            <li key={post.id} className="d-flex justify-content-between align-items-center mb-2" >
-                                                <span className="post-title" style={{
-                                                    flex: 1,
-                                                    whiteSpace: 'nowrap',
-                                                    overflow: 'hidden',
-                                                    textOverflow: 'ellipsis',
-                                                    marginRight: '15px',
-                                                    color:'white'
-                                                }}>
-                                                    {post.title}
-                                                </span>
-                                                <small className="text-muted" style={{ flexShrink: 0 }}>
-                                                    {post.date}
-                                                </small>
-
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
                             <div style={{ backgroundColor: '#55439A', borderRadius: '15px', color: 'white' }}>
                                 <div className="">
-                                    <div className="todo-title text-center" style={{ marginTop: '0px' }}>분실물</div>
+                                    <Link to={'/lost/lost/list'} style={{ color: 'white', textDecoration: 'none' }}>
+                                        <div className="todo-title text-center" style={{ padding: '8px' }}>분실물</div>
+                                    </Link>
                                 </div>
                                 <div className="board-widget border rounded p-3" style={{ maxWidth: '500px' }}>
                                     <ul className="list-unstyled mb-0">
                                         {lostDummyData.map((post) => (
-                                            <li key={post.id} className="d-flex justify-content-between align-items-center mb-2" >
-                                                <span className="post-title" style={{
-                                                    flex: 1,
-                                                    whiteSpace: 'nowrap',
-                                                    overflow: 'hidden',
-                                                    textOverflow: 'ellipsis',
-                                                    marginRight: '15px',
-                                                    color:'white'
-                                                }}>
-                                                    {post.title}
-                                                </span>
-                                                <small className="text-muted" style={{ flexShrink: 0 }}>
-                                                    {post.date}
-                                                </small>
+                                            <Link to={`/lost/detail/${post.id}`} style={{ textDecoration: 'none' }}>
+                                                <li key={post.id} className="d-flex justify-content-between align-items-center mb-2" >
+                                                    <span className="post-title" style={{
+                                                        flex: 1,
+                                                        whiteSpace: 'nowrap',
+                                                        overflow: 'hidden',
+                                                        textOverflow: 'ellipsis',
+                                                        marginRight: '15px',
+                                                        color: 'white'
+                                                    }}>
 
-                                            </li>
+                                                        {post.title}
+                                                    </span>
+                                                    <small style={{ flexShrink: 0, color: 'white' }}>
+                                                        {post.date}
+                                                    </small>
+                                                </li>
+                                            </Link>
                                         ))}
                                     </ul>
                                 </div>
