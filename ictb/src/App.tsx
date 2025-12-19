@@ -24,7 +24,7 @@ import Home from "./MainPage/Home";
 
 
 function App() {
-  const [isLogin, setIsLogin] = useState<boolean>(false); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
+  const [isLogin, setIsLogin] = useState<boolean>(true); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
 
   const handleLogout = () => {
     setIsLogin(false);
@@ -36,9 +36,9 @@ function App() {
       {isLogin ? (
         <SlackPage onLogout={handleLogout}>
           <Routes>
-            <Route path='/mypage' element={<MyPage/>} />
-            <Route path='/home' element={<Home/>} />
-            <Route path="/" element={<Navigate to="/board/list/1" replace />} />
+            <Route path='/mypage' element={<MyPage />} />
+            <Route path='/home' element={<Home />} />
+            <Route path="/" element={<Navigate to="/board/free/list" replace />} />
 
             <Route path="/board/:kind/list" element={<BoardList />} />
             <Route path="/board/:kind/detail/:id" element={<BoardDetail />} />
@@ -59,7 +59,7 @@ function App() {
       ) : (
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/login" element={<Login onLogin={()=>setIsLogin(true)}/>} />
+          <Route path="/login" element={<Login onLogin={() => setIsLogin(true)} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<Undo />} />
         </Routes>
