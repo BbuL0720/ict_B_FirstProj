@@ -48,8 +48,10 @@ function App() {
             <Route path="/todo" element={<Todo />} />
 
             <Route path="/lost/:kind/list" element={<LostList />} />
-            <Route path="/lost/:kind/detail/:id" element={<LostDetail />} />
-            <Route path="/lost/:kind/form" element={<LostForm />} />
+            {/* <Route path="/lost/:kind/detail/:id" element={<LostDetail />} /> */}
+            <Route path="/lost/detail/:id" element={<LostDetail />} />
+            {/* <Route path="/lost/:kind/form" element={<LostForm />} /> */}
+            <Route path="/lost/form" element={<LostForm />} />
 
             <Route path="*" element={<Undo />} />
           </Routes>
