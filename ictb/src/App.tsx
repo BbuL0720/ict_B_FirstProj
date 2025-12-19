@@ -26,7 +26,7 @@ import NewPwd from "./pages/login/NewPwd";
 
 
 function App() {
-	const [isLogin, setIsLogin] = useState<boolean>(false); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
+  const [isLogin, setIsLogin] = useState<boolean>(true); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
 
 	const handleLogout = () => {
 		setIsLogin(false);
@@ -38,9 +38,9 @@ function App() {
 			{isLogin ? (
 				<SlackPage onLogout={handleLogout}>
 					<Routes>
-						<Route path='/mypage' element={<MyPage />} />
-						<Route path='/home' element={<Home />} />
-						<Route path="/" element={<Navigate to="/board/list/1" replace />} />
+						<Route path='/mypage' element={<MyPage  />} />
+						<Route path='/home' element={<Home  />} />
+						<Route path="/" element={<Navigate to="/board/free/list" replace />} />
 
 						<Route path="/board/:kind/list" element={<BoardList />} />
 						<Route path="/board/:kind/detail/:id" element={<BoardDetail />} />
@@ -49,25 +49,25 @@ function App() {
 
 						<Route path="/todo" element={<Todo />} />
 
-						<Route path="/lost/:kind/list" element={<LostList />} />
-						<Route path="/lost/:kind/detail/:id" element={<LostDetail />} />
-						<Route path="/lost/:kind/form" element={<LostForm />} />
+            <Route path="/lost/:kind/list" element={<LostList />} />
+            {/* <Route path="/lost/:kind/detail/:id" element={<LostDetail />} /> */}
+            <Route path="/lost/detail/:id" element={<LostDetail />} />
+            {/* <Route path="/lost/:kind/form" element={<LostForm />} /> */}
+            <Route path="/lost/form" element={<LostForm />} />
 
-						<Route path="*" element={<Undo />} />
-					</Routes>
-				</SlackPage>
-			) : (
-				<Routes>
-					<Route path="/" element={<Navigate to="/login" replace />} />
-					<Route path="/login" element={<Login onLogin={() => setIsLogin(true)} />} />
-					<Route path="/signup" element={<Signup />} />
-					<Route path="/forgot" element={<ForgotPwd />} />
-					<Route path="/newpwd" element={<NewPwd />} />
-					<Route path="*" element={<Undo />} />
-				</Routes>
-			)}
-		</Router>
-	);
+            <Route path="*" element={<Undo />} />
+          </Routes>
+        </SlackPage>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/login" element={<Login onLogin={()=>setIsLogin(true)}/>} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<Undo />} />
+        </Routes>
+      )}
+    </Router>
+  );
 }
 
 export default App;
