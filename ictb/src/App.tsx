@@ -21,7 +21,8 @@ import LostDetail from "./pages/lost/LostDetail";
 import SlackPage from "./pages/SlackPage";
 import MyPage from "./pages/mypage/MyPage";
 import Home from "./MainPage/Home";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
 	const [isLogin, setIsLogin] = useState<boolean>(true); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯

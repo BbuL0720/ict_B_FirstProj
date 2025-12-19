@@ -10,6 +10,7 @@ import { Repeat } from '@mui/icons-material'
 import { url } from 'inspector'
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 
 //import "slick-carousel/slick/slick.css";
 //import "slick-carousel/slick/slick-theme.css";
@@ -35,8 +36,9 @@ const Home: React.FC = () => {
     ];
 
     const settings = {
-        dots: true, //하단 점
-        fade: true,// 페이드효과
+        
+        // dots: true, //하단 점
+        // fade: true,// 페이드효과
         waitForAnimate: false,
         infinite: true, // 무한 반복
         speed: 500,
@@ -47,21 +49,33 @@ const Home: React.FC = () => {
         arrows: true //화살표 좌우
     }
     //더미 데이터 추후에 연습문제 *****
-    const homeData = [
-        // { id: 1, img: "/img/bat.webp", text: "안녕하세요 ICTPassword!" },
-        // { id: 2, img: "/img/pup.jpg", text: "Spring & React 전문가 과정" },
-        // { id: 3, img: "/img/kitt.jpg", text: "함께 성장!!" }
-    ]
+    // const homeData = [
+    //     { id: 1, img: "/img/bat.webp", text: "안녕하세요 ICTPassword!" },
+    //     { id: 2, img: "/img/pup.jpg", text: "Spring & React 전문가 과정" },
+    //     { id: 3, img: "/img/kitt.jpg", text: "함께 성장!!" }
+    // ]
+    
+
 
     return (
         <main style={{ backgroundImage: 'url(./img/Artboard1.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
-
-
             <section className="text-center container" style={{ width: '100%', height: '600px', padding: '20px' }} >
-                <div style={{ backgroundColor: 'white', width: '100%', height: '100%' }}>
+                
+                <div style={{ backgroundColor: 'white', width: '100%', height: '100%', position:"relative"}}>
 
-                    <div className="d-flex align-items-center justify-content-center" style={{ height: '100%' }}>
+                        <Slider {...settings} className='position-absolute w-100'> 
+                            <div>
+                                <img src="img/img1.png"  />
+                            </div>
+                             <div>
+                                <img src="img/img2.png" style={{padding:'0', margin:''}} />
+                            </div>
+                            {/*<div>
+                                <img src="img/img3.png" style={{padding: '50px'}} />
+                            </div> */}
+                        </Slider>
+                    <div className="d-flex align-items-center justify-content-center position-absolute" style={{ height: '100%' }}>
                         <div className="mx-auto">
                             <h1 className="fw-bolder" style={{ color: '#55439A', fontSize: '80px' }} >UNI-BASE</h1>
                             <h3 className="fw-bold" style={{ color: '#A03DA5' }}>Minimal Academic Life Platform</h3>
@@ -70,9 +84,8 @@ const Home: React.FC = () => {
                                 Designed to reduce noise in university life <br />
                                 - 대학생활 가장 필요한 것만 남기다.</p>
 
-
                         </div>
-                        <img src="img/img1.png" style={{ padding: '50px' }} />
+                        
                     </div>
 
                 </div>
