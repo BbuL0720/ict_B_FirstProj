@@ -54,21 +54,19 @@ const BoardList: React.FC = () => {
 
 				<div>
 					<Link to={"/board/write"}>
-						<button type="button" className="btn btn-primary">
-							글작성
-						</button>
+						<button type="button" className="btn btn-outline-secondary">글작성</button>
 					</Link>
 				</div>
 			</div>
 			<div className='d-flex justify-content-center my-3'>
 				<div>
-					<button type="button" className="btn btn-dark mx-0">◀</button>
-					<button type="button" className="btn btn-outline-dark mx-1">1</button>
-					<button type="button" className="btn btn-outline-dark mx-0">2</button>
-					<button type="button" className="btn btn-outline-dark mx-1">3</button>
-					<button type="button" className="btn btn-outline-dark mx-0">4</button>
-					<button type="button" className="btn btn-outline-dark mx-1">5</button>
-					<button type="button" className="btn btn-dark mx-0">▶</button>
+					<button type="button" className="btn btn-outline-dark mx-0">◀</button>
+					<button type="button" className="btn btn-outline-secondary mx-1">1</button>
+					<button type="button" className="btn btn-outline-secondary mx-0">2</button>
+					<button type="button" className="btn btn-outline-secondary mx-1">3</button>
+					<button type="button" className="btn btn-outline-secondary mx-0">4</button>
+					<button type="button" className="btn btn-outline-secondary mx-1">5</button>
+					<button type="button" className="btn btn-outline-dark mx-0">▶</button>
 				</div>
 			</div>
 		</div>
