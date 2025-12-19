@@ -24,12 +24,12 @@ const ForgotPwd: React.FC = () => {
 					<div className="mb-5">
 						<label>이메일</label>
 						<input type="email" className="form-control" placeholder="이메일을 입력해주세요" />
-						<button type='submit' className='btn w-30' style={{ float: 'right', marginTop: '5px', color: 'white', background: '#7a44e0' }}>인증하기</button>
+						<button type='submit' className='btn w-30' id={style.btn} style={{ float: 'right', marginTop: '5px'}}>인증하기</button>
 					</div>
 					<div className="mb-5">
 						<label>인증번호</label>
 						<input type="text" className="form-control" placeholder="인증번호를 입력해주세요" />
-						<button type='submit' className='btn w-30' style={{ float: 'right', marginTop: '5px', color: 'white', background: '#7a44e0' }}>확인</button>
+						<button type='submit' className='btn w-30' id={style.btn} style={{ float: 'right', marginTop: '5px'}}>확인</button>
 					</div>
 				</form>
 

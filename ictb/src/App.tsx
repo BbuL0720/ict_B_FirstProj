@@ -23,6 +23,8 @@ import MyPage from "./pages/mypage/MyPage";
 import Home from "./MainPage/Home";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ForgotPwd from "./pages/login/ForgotPwd";
+
 
 function App() {
 	const [isLogin, setIsLogin] = useState<boolean>(true); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
@@ -60,6 +62,7 @@ function App() {
 					<Route path="/" element={<Navigate to="/login" replace />} />
 					<Route path="/login" element={<Login onLogin={() => setIsLogin(true)} />} />
 					<Route path="/signup" element={<Signup />} />
+					<Route path="/forgot" element={<ForgotPwd/>}/>
 					<Route path="*" element={<Undo />} />
 				</Routes>
 			)}

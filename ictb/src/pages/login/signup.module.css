@@ -64,3 +64,14 @@
     border-color: #e2e8f0;
     color: #334155;
 }
+
+#btn{
+    background-color: #7a44e0;
+    color: white;
+}
+#btn:hover{
+    background-color: #9aa3f1;
+    color: black;
+}
+
+   
