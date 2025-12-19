@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { json } from 'stream/consumers';
 import { allBoardData } from './boardDummy';
+import '../../style/styles.css'
 
 const BoardList: React.FC = () => {
 	const { kind } = useParams<{ kind: string }>();
@@ -10,7 +11,7 @@ const BoardList: React.FC = () => {
 	return (
 		<div className='container d-flex flex-column justify-content-center' style={{ maxWidth: '1000px' }}>
 			{/* <h2>#board</h2> */}
-			<div className="display-4 mx-auto my-4">{ }</div>
+			<div className="display-4 mx-auto my-4">{}</div>
 			<table className="table table-striped table-hover">
 				<thead>
 					<tr>
@@ -26,7 +27,7 @@ const BoardList: React.FC = () => {
 							currentData.map((e) => (
 								<tr key={e.num}>
 									<td>{e.num}</td>
-									<td><Link to={`/board/${kind}/detail/${e.num}`}>{e.title}</Link></td>
+									<td><Link to={`/board/${kind}/detail/${e.num}`} className='text-decoration-none text-primary'>{e.title}</Link></td>
 									<td>{e.writer}</td>
 									<td>{e.wtime}</td>
 								</tr>
@@ -53,10 +54,10 @@ const BoardList: React.FC = () => {
 
 				<div>
 					<Link to={"/board/write"}>
-                    <button type="button" className="btn btn-primary">
-                        글작성
-                        </button>
-                    </Link>
+						<button type="button" className="btn btn-primary">
+							글작성
+						</button>
+					</Link>
 				</div>
 			</div>
 			<div className='d-flex justify-content-center my-3'>

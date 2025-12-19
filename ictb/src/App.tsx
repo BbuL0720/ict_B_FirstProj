@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {
-  Navigate,
-  Route,
-  BrowserRouter as Router,
-  Routes,
+	Navigate,
+	Route,
+	BrowserRouter as Router,
+	Routes,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
@@ -24,48 +24,48 @@ import Home from "./MainPage/Home";
 
 
 function App() {
-  const [isLogin, setIsLogin] = useState<boolean>(true); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
+	const [isLogin, setIsLogin] = useState<boolean>(true); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
 
-  const handleLogout = () => {
-    setIsLogin(false);
-  };
+	const handleLogout = () => {
+		setIsLogin(false);
+	};
 
-  return (
-    <Router>
-      {/* {isLogin && <Header />} */}
-      {isLogin ? (
-        <SlackPage onLogout={handleLogout}>
-          <Routes>
-            <Route path='/mypage' element={<MyPage />} />
-            <Route path='/home' element={<Home />} />
-            <Route path="/" element={<Navigate to="/board/free/list" replace />} />
+	return (
+		<Router>
+			{/* {isLogin && <Header />} */}
+			{isLogin ? (
+				<SlackPage onLogout={handleLogout}>
+					<Routes>
+						<Route path='/mypage' element={<MyPage />} />
+						<Route path='/home' element={<Home />} />
+						<Route path="/" element={<Navigate to="/board/free/list" replace />} />
 
-            <Route path="/board/:kind/list" element={<BoardList />} />
-            <Route path="/board/:kind/detail/:id" element={<BoardDetail />} />
-            <Route path="/board/write" element={<BoardForm />} />
-            {/* <Route path="/board/:kind/form" element={<BoardForm />} /> */}
+						<Route path="/board/:kind/list" element={<BoardList />} />
+						<Route path="/board/:kind/detail/:id" element={<BoardDetail />} />
+						<Route path="/board/write" element={<BoardForm />} />
+						{/* <Route path="/board/:kind/form" element={<BoardForm />} /> */}
 
-            <Route path="/todo" element={<Todo />} />
+						<Route path="/todo" element={<Todo />} />
 
-            <Route path="/lost/:kind/list" element={<LostList />} />
-            {/* <Route path="/lost/:kind/detail/:id" element={<LostDetail />} /> */}
-            <Route path="/lost/detail/:id" element={<LostDetail />} />
-            {/* <Route path="/lost/:kind/form" element={<LostForm />} /> */}
-            <Route path="/lost/form" element={<LostForm />} />
+						<Route path="/lost/:kind/list" element={<LostList />} />
+						{/* <Route path="/lost/:kind/detail/:id" element={<LostDetail />} /> */}
+						<Route path="/lost/detail/:id" element={<LostDetail />} />
+						{/* <Route path="/lost/:kind/form" element={<LostForm />} /> */}
+						<Route path="/lost/form" element={<LostForm />} />
 
-            <Route path="*" element={<Undo />} />
-          </Routes>
-        </SlackPage>
-      ) : (
-        <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/login" element={<Login onLogin={() => setIsLogin(true)} />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="*" element={<Undo />} />
-        </Routes>
-      )}
-    </Router>
-  );
+						<Route path="*" element={<Undo />} />
+					</Routes>
+				</SlackPage>
+			) : (
+				<Routes>
+					<Route path="/" element={<Navigate to="/login" replace />} />
+					<Route path="/login" element={<Login onLogin={() => setIsLogin(true)} />} />
+					<Route path="/signup" element={<Signup />} />
+					<Route path="*" element={<Undo />} />
+				</Routes>
+			)}
+		</Router>
+	);
 }
 
 export default App;

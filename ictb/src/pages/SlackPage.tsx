@@ -22,7 +22,7 @@ const sideItems: Title[] = [		//본격 더미데이터(메인 아이템들)
 	{
 		title: '게시판',
 		url_main: 'board',
-		subTitles: [{ subTitle: '자유 게시판', url_sub: 'free/list', },
+		subTitles: [{ subTitle: '자유 게시판', url_sub: 'free/list' },
 		{ subTitle: '정보 게시판', url_sub: 'info/list' },
 		{ subTitle: '홍보 게시판', url_sub: 'Prom/list' }]
 	},
@@ -78,9 +78,7 @@ const SlackPage: React.FC<LayoutProps> = ({ children, onLogout }) => {
 											<AutoAwesomeMosaicIcon />
 										</span>
 										<p className="nanum-gothic-regular" style={{ fontFamily: "Paperozi", fontSize: "13px" }}>{e.title}</p>
-
 									</Link>
-
 								))
 							}
 						</div>

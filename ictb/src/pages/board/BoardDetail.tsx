@@ -31,12 +31,7 @@ const BoardDetail: React.FC = () => {
                             </div>					
 						</article>
 					</div>
-					<div className="d-flex justify-content-between my-3 mx-4">
-						<div className="input-group" style={{width:"50%"}}>
-							<span className="input-group-text">비밀번호</span>
-							<input type="text" className="form-control" placeholder="Password" />
-							<a href="#" className="btn btn-primary">완료</a>
-						</div>
+					<div className="d-flex justify-content-end my-3 mx-4">
 						<div className="d-flex">
 							<a href="#" className="btn btn-primary">수정</a>
 							<a href="#" className="btn btn-primary ms-1">삭제</a>
