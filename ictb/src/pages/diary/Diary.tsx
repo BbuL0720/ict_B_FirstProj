@@ -1,5 +1,6 @@
 import React from 'react'
 import HTMLFlipBook from 'react-pageflip';
+import Todo from '../todo/Todo';
 
 interface MyBookProps {
     //책디자인의 너비와 높이 (필수)
@@ -16,24 +17,30 @@ interface MyBookProps {
 }
 const myData = [
     {
-        image: "images/bg1.png",
-        text: "오늘은 강가를 걸었다. 물소리가 너무 좋았다.\n 정말 재미 있었다.아! 행복하다."
+        
+        image:"img/diaryimg/diary.jpg",
+        text: "오늘은 강가를 걸었는데 물이 너무 맑아서 기분이 좋았다",
     },
     {
-        image: "images/bg2.png",
-        text: "밤에 거리를 걸어 보았다. 하루가 정말 보람되었다."
+        image: "img/diaryimg/river.png",
+         text: "교토의 야경은 엄청 이뻣다 다음에 또 가고싶다"
     },
     {
-        image: "images/bg3.png",
+        image: "img/diaryimg/kyoto.png",
         text: "도서관에서 책을 읽었다. 마음이 차분해졌다."
+       
     },
     {
-        image: "images/bg4.png",
-        text: "오늘은 비가 내렸다. 그래도 복습은 열심히 했다."
+        image: "img/diaryimg/onebook.jpg",
+        text: "오늘은 비가 내려서 집에서 커피 한잔을 했는데 낭만 있었다."
     },
     {
-        image: "images/bg5.png",
-        text: "오늘은 비가 내렸다. 내일도 복습은 열심히 하겠다."
+        image: "img/diaryimg/rain.jpg",
+        text: "영화관에 왔는데 사람이 별로 없어서 좋았다..."
+    },
+    {
+        image: "img/diaryimg/movie.jpg",
+        
     }
 ]
 
@@ -50,7 +57,7 @@ const Diary: React.FC = () => {
               {...({ style: {}, usePortrait: true } as any)} 
               기존의 스타일 인터페이스에 동적으로 추가 하기  
              */}
-                <HTMLFlipBook width={400} height={600}
+                <HTMLFlipBook width={800} height={600}
                     showCover={true}
                     {...({ style: {}, usePortrait: false } as any)}
                     autoSize={true} mobileScrollSupport={true}
@@ -74,7 +81,7 @@ const Diary: React.FC = () => {
                                 alignItems: 'center',
                                 overflow: 'hidden',
                             }}>
-                                <img src={entry.image} alt={`Diary Image ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <img src={entry.image} alt={`Diary Image ${idx}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </div>,
 
                             //텍스트 페이지
@@ -94,7 +101,7 @@ const Diary: React.FC = () => {
                             </div>
 
                         ]))()
-
+                        
                     }
                 </HTMLFlipBook>
             </div>
