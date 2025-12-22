@@ -165,30 +165,15 @@ const Home: React.FC = () => {
                                 </div>
                                 <ul className="todo-list border rounded p-3">
                                     <li className="todo-item">
-                                        <input type="checkbox" defaultChecked />
-                                        <span className="checked">Lunch</span>
-                                        <div className="actions">
-                                            <i className="edit">✎</i>
-                                            <i className="delete">🗑</i>
-                                        </div>
+                                        <span>Lunch</span>
                                     </li>
 
                                     <li className="todo-item">
-                                        <input type="checkbox" />
                                         <span>Dinner</span>
-                                        <div className="actions">
-                                            <i className="edit">✎</i>
-                                            <i className="delete">🗑</i>
-                                        </div>
                                     </li>
 
                                     <li className="todo-item">
-                                        <input type="checkbox" />
                                         <span>Snacks</span>
-                                        <div className="actions">
-                                            <i className="edit">✎</i>
-                                            <i className="delete">🗑</i>
-                                        </div>
                                     </li>
                                 </ul>
                             </div>
