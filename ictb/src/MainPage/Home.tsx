@@ -22,7 +22,7 @@ import Slider from 'react-slick';
 //conts/Hone.tsx
 
 const Home: React.FC = () => {
-    
+
     const dummyData = [
         { id: 1, title: "헐.. 내일 수업 휴강이래 대박 ㅋㅋㅋㅋ", date: "2025.12.27" },
         { id: 2, title: "점심 혼밥하기 좋은 곳 있나요? (중도 근처)", date: "2025.12.26" },
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
     ];
 
     const settings = {
-        
+
         // dots: true, //하단 점
         // fade: true,// 페이드효과
         waitForAnimate: false,
@@ -56,31 +56,52 @@ const Home: React.FC = () => {
     //     { id: 2, img: "/img/pup.jpg", text: "Spring & React 전문가 과정" },
     //     { id: 3, img: "/img/kitt.jpg", text: "함께 성장!!" }
     // ]
-    
+
 
 
     return (
         <main style={{ backgroundImage: 'url(./img/Artboard1.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
             <section className="text-center container" style={{ width: '100%', height: '600px', padding: '20px' }} >
-                
-                <div style={{ backgroundColor: 'white', width: '100%', height: '100%', position:"relative"}}>
 
-                        <Slider {...settings} className='position-absolute w-100'> 
-                            <div>
-                                <img src="img/img1.png"  />
-                            </div>
-                             <div>
-                                <img src="img/img2.png" />
-                            </div>
-                            <div>
-                                <img src="img/img3.png"  />
-                            </div>
-                            <div>
-                                <img src="img/img4.png"  />
-                            </div>
-                        </Slider>
-                    <div className="d-flex align-items-center justify-content-center position-absolute" style={{ height: '100%' }}>
+                <div style={{ backgroundColor: 'white', width: '100%', height: '100%', position: "relative" }}>
+
+                    <Slider {...settings} className='position-absolute w-100' >
+                        <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
+                            <img src="img/img1.png" style={{ 
+                                    width: '60%', 
+                                    height: '60%', 
+                                    objectFit: 'cover', 
+                                    objectPosition: 'center center'
+                                }}/>
+                        </div>
+                        <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
+                            <img src="img/img2.png" style={{ 
+                                    width: '60%', 
+                                    height: '60%', 
+                                    objectFit: 'cover', 
+                                    objectPosition: 'center center'
+                                }}/>
+                        </div>
+                        <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
+                            <img src="img/img3.png" style={{ 
+                                    width: '60%', 
+                                    height: '60%', 
+                                    objectFit: 'cover', 
+                                    objectPosition: 'center center'
+                                }}/>
+                        </div>
+                        <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
+                            <img src="img/img4.png" style={{ 
+                                    width: '60%', 
+                                    height: '60%', 
+                                    objectFit: 'cover', 
+                                    objectPosition: 'center center'
+                                }}/>
+                        </div>
+
+                    </Slider>
+                    <div className="d-flex align-items-center justify-content-center position-absolute" style={{ height: '100%', right:"10px" }}>
                         <div className="mx-auto">
                             <h1 className="fw-bolder" style={{ color: '#55439A', fontSize: '80px' }} >UNI-BASE</h1>
                             <h3 className="fw-bold" style={{ color: '#A03DA5' }}>Minimal Academic Life Platform</h3>
@@ -88,11 +109,8 @@ const Home: React.FC = () => {
                             <p className="lead text-muted" style={{ fontStyle: 'italic', color: '#55439A' }}>
                                 Designed to reduce noise in university life <br />
                                 - 대학생활 가장 필요한 것만 남기다.</p>
-
                         </div>
-                        
                     </div>
-
                 </div>
             </section>
 
