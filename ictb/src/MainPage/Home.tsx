@@ -20,7 +20,9 @@ import Slider from 'react-slick';
 
 
 //conts/Hone.tsx
+
 const Home: React.FC = () => {
+    
     const dummyData = [
         { id: 1, title: "헐.. 내일 수업 휴강이래 대박 ㅋㅋㅋㅋ", date: "2025.12.27" },
         { id: 2, title: "점심 혼밥하기 좋은 곳 있나요? (중도 근처)", date: "2025.12.26" },
@@ -29,10 +31,10 @@ const Home: React.FC = () => {
     ];
 
     const lostDummyData = [
-        { id: 1, title: "아이폰16 분실했어요", date: "2025.12.27" },
-        { id: 2, title: "갤럭시 잃어버렸어요", date: "2025.12.26" },
-        { id: 3, title: "카페에서 맥북 보신 분", date: "2025.11.25" },
-        { id: 4, title: "키링 발견하신 분 ㅜㅜ", date: "2025.11.25" }
+        { id: 1, title: "고양이군단", date: "2025.12.05" },
+        { id: 2, title: "박쥐", date: "2025.12.08" },
+        { id: 3, title: "고양이", date: "2025.12.12" },
+        { id: 4, title: "강아지", date: "2025.12.14" }
     ];
 
     const settings = {
@@ -183,7 +185,7 @@ const Home: React.FC = () => {
                                 <div className="board-widget border rounded p-3" style={{ maxWidth: '500px' }}>
                                     <ul className="list-unstyled mb-0">
                                         {lostDummyData.map((post) => (
-                                            <Link to={`/lost/detail/${post.id}`} style={{ textDecoration: 'none' }}>
+                                            <Link to={`/lost/lost/detail/${post.id}`} style={{ textDecoration: 'none' }}>
                                                 <li key={post.id} className="d-flex justify-content-between align-items-center mb-2" >
                                                     <span className="post-title" style={{
                                                         flex: 1,
