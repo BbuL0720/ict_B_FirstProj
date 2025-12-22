@@ -32,7 +32,25 @@ interface Todo {
 
 const Todo: React.FC = () => {
   const [date, setDate] = useState(new Date()); // 초기값으로 현재 날짜 설정
+  const [inputValue, setInputValue] = useState(''); // 현재 인풋 값
+  const [data, setData] = useState(dummyData); // 더미데이터 추가
+  const formatDate = (date: Date): string => { // 데이터가 이전날짜로 나오기 때문에 시간차 해결코드 (인터넷에 가져옴)
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
 
+  const selectedDateString = formatDate(date);
+
+  const findData = data.filter(
+    (item) => item.date === selectedDateString
+  );
+
+  const inputTodo = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value)
+    console.log(inputValue)
+  }
 
   const handleDateChange = (value: Value) => {
     console.log("바뀜", value);
@@ -43,22 +61,15 @@ const Todo: React.FC = () => {
     }
   };
 
-  const formatDate = (date: Date): string => { // 데이터가 이전날짜로 나오기 때문에 시간차 해결코드 (인터넷에 가져옴)
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+  const addTodo = () => {
+    if (inputValue.trim() !== '') { // 공백이 아니면 추가
+      console.log("TODO입력");
+      setData([...data, { date: formatDate(date), description: inputValue }]); // 기존 items 배열에 새 값 추가
+      setInputValue("");
+    }
+
   };
-
-  const selectedDateString = formatDate(date);
-
-  const findData = dummyData.filter(
-    (item) => item.date === selectedDateString
-  );
-
-  const todosubmit = () => {
-    console.log("TODO입력");
-  };
+  console.log("todo_data =" + JSON.stringify(data));
 
   return (
     <div>
@@ -87,11 +98,13 @@ const Todo: React.FC = () => {
 
                 <div className="todo-input-area">
                   <input
+                    onChange={inputTodo}
+                    value={inputValue}
                     type="text"
                     className="todo-input-box"
                     placeholder="Write a new task..."
                   />
-                  <button className="todo-add-btn">＋</button>
+                  <button onClick={addTodo} className="todo-add-btn">＋</button>
                 </div>
 
                 {findData.length > 0 ? (
@@ -107,7 +120,7 @@ const Todo: React.FC = () => {
                     ))}
                   </ul>
                 ) : (
-                  <div className="todo-item">데이터가 없습니다</div>
+                  <div className="todo-input-area">데이터가 없습니다</div>
                 )}
               </div>
             </div>
