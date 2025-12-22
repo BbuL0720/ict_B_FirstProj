@@ -25,6 +25,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ForgotPwd from "./pages/login/ForgotPwd";
 import Diary from "./pages/diary/Diary";
+import Friend from "./pages/friend/Friend";
 
 
 function App() {
@@ -51,12 +52,13 @@ function App() {
 
 						<Route path="/todo/todo" element={<Todo />} />
 						<Route path="/todo/diary" element={<Diary />} />
+						<Route path="/friend" element={<Friend />} />
 
 						<Route path="/lost/:kind/list" element={<LostList />} />
 						<Route path="/lost/:kind/detail/:id" element={<LostDetail />} />
 						<Route path="/lost/:kind/form" element={<LostForm />} />
 						<Route path="*" element={<Undo />} />
-						<Route path="/diary" element={<Diary />} />
+
 					</Routes>
 				</SlackPage>
 			) : (

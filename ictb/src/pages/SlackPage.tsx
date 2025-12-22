@@ -36,6 +36,10 @@ const sideItems: Title[] = [		//본격 더미데이터(메인 아이템들)
 		url_main: 'lost',
 		subTitles: [{ subTitle: '분실물 발생', url_sub: 'lost/list' },
 		{ subTitle: '분실물 습득', url_sub: 'find/list' }]
+	},
+	{
+		title: '친구',
+		url_main: 'friend'
 	}
 ]
 
