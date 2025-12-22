@@ -55,7 +55,7 @@ function App() {
 						<Route path="/lost/:kind/detail/:id" element={<LostDetail />} />
 						<Route path="/lost/:kind/form" element={<LostForm />} />
 						<Route path="*" element={<Undo />} />
-						<Route path="/diary" element={<Diary/>}/>
+						<Route path="/diary" element={<Diary />} />
 					</Routes>
 				</SlackPage>
 			) : (
@@ -63,7 +63,7 @@ function App() {
 					<Route path="/" element={<Navigate to="/login" replace />} />
 					<Route path="/login" element={<Login onLogin={() => setIsLogin(true)} />} />
 					<Route path="/signup" element={<Signup />} />
-					<Route path="/forgot" element={<ForgotPwd/>}/>
+					<Route path="/forgot" element={<ForgotPwd />} />
 					<Route path="*" element={<Undo />} />
 				</Routes>
 			)}

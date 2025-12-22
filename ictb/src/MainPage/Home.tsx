@@ -68,42 +68,42 @@ const Home: React.FC = () => {
 
                     <Slider {...settings} className='position-absolute w-100' >
                         <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
-                            <img src="img/img1.png" style={{ 
-                                    width: '60%', 
-                                    height: '60%', 
-                                    objectFit: 'cover', 
-                                    objectPosition: 'center center'
-                                }}/>
+                            <img src="img/img1.png" style={{
+                                width: '60%',
+                                height: '60%',
+                                objectFit: 'cover',
+                                objectPosition: 'center center'
+                            }} />
                         </div>
                         <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
-                            <img src="img/img2.png" style={{ 
-                                    width: '60%', 
-                                    height: '60%', 
-                                    objectFit: 'cover', 
-                                    objectPosition: 'center center'
-                                }}/>
+                            <img src="img/img2.png" style={{
+                                width: '60%',
+                                height: '60%',
+                                objectFit: 'cover',
+                                objectPosition: 'center center'
+                            }} />
                         </div>
                         <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
-                            <img src="img/img3.png" style={{ 
-                                    width: '60%', 
-                                    height: '60%', 
-                                    objectFit: 'cover', 
-                                    objectPosition: 'center center'
-                                }}/>
+                            <img src="img/img3.png" style={{
+                                width: '60%',
+                                height: '60%',
+                                objectFit: 'cover',
+                                objectPosition: 'center center'
+                            }} />
                         </div>
                         <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
-                            <img src="img/img4.png" style={{ 
-                                    width: '60%', 
-                                    height: '60%', 
-                                    objectFit: 'cover', 
-                                    objectPosition: 'center center'
-                                }}/>
+                            <img src="img/img4.png" style={{
+                                width: '60%',
+                                height: '60%',
+                                objectFit: 'cover',
+                                objectPosition: 'center center'
+                            }} />
                         </div>
 
                     </Slider>
-                    <div className="d-flex align-items-center justify-content-center position-absolute" style={{ height: '100%', right:"10px" }}>
+                    <div className="d-flex align-items-center justify-content-center position-absolute" style={{ height: '100%', right: "10px" }}>
                         <div className="mx-auto">
-                            <h1 className="fw-bolder" style={{ color: '#55439A', fontSize: '80px' }} >UNI-BASE</h1>
+                            <h1 className="fw-bolder" style={{ color: '#55439A', fontSize: '80px' }} >나만의 캠퍼스</h1>
                             <h3 className="fw-bold" style={{ color: '#A03DA5' }}>Minimal Academic Life Platform</h3>
                             <p className="lead text-muted"></p>
                             <p className="lead text-muted" style={{ fontStyle: 'italic', color: '#55439A' }}>
