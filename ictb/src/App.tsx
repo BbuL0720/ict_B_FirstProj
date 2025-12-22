@@ -49,8 +49,8 @@ function App() {
 						<Route path="/board/write" element={<BoardForm />} />
 						{/* <Route path="/board/:kind/form" element={<BoardForm />} /> */}
 
-						<Route path="/todo" element={<Todo />} />
-						<Route path="/diary" element={<Diary/>}/>
+						<Route path="/todo/todo" element={<Todo />} />
+						<Route path="/todo/diary" element={<Diary />} />
 
 						<Route path="/lost/:kind/list" element={<LostList />} />
 						<Route path="/lost/:kind/detail/:id" element={<LostDetail />} />

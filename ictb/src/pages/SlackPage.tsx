@@ -28,7 +28,8 @@ const sideItems: Title[] = [		//본격 더미데이터(메인 아이템들)
 	},
 	{
 		title: 'ToDo',
-		url_main: 'todo'
+		url_main: 'todo',
+		subTitles: [{ subTitle: 'Todo', url_sub: '/todo' }, { subTitle: 'Diary', url_sub: '/diary' }]
 	},
 	{
 		title: '분실물',

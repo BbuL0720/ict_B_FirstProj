@@ -17,30 +17,30 @@ interface MyBookProps {
 }
 const myData = [
     {
-        
-        image:"img/diaryimg/diary.jpg",
+
+        image: "/img/diaryimg/diary.jpg",
         text: "오늘은 강가를 걸었는데 물이 너무 맑아서 기분이 좋았다",
     },
     {
-        image: "img/diaryimg/river.png",
-         text: "교토의 야경은 엄청 이뻣다 다음에 또 가고싶다"
+        image: "/img/diaryimg/river.png",
+        text: "교토의 야경은 엄청 이뻣다 다음에 또 가고싶다"
     },
     {
-        image: "img/diaryimg/kyoto.png",
+        image: "/img/diaryimg/kyoto.png",
         text: "도서관에서 책을 읽었다. 마음이 차분해졌다."
-       
+
     },
     {
-        image: "img/diaryimg/onebook.jpg",
+        image: "/img/diaryimg/onebook.jpg",
         text: "오늘은 비가 내려서 집에서 커피 한잔을 했는데 낭만 있었다."
     },
     {
-        image: "img/diaryimg/rain.jpg",
+        image: "/img/diaryimg/rain.jpg",
         text: "영화관에 왔는데 사람이 별로 없어서 좋았다..."
     },
     {
-        image: "img/diaryimg/movie.jpg",
-        
+        image: "/img/diaryimg/movie.jpg",
+
     }
 ]
 
@@ -49,7 +49,7 @@ const Diary: React.FC = () => {
         <div style={{ textAlign: 'center', marginTop: '30px' }}>
             <h2>Diary</h2>
             <div style={{
-                width: '800px', height:'600px', margin: '20px auto',
+                width: '800px', height: '600px', margin: '20px auto',
                 overflow: 'hidden', borderRadius: '10px',
                 boxShadow: '0 8px 20px rgba(0,0,0,0.2)'
             }}>
@@ -101,7 +101,7 @@ const Diary: React.FC = () => {
                             </div>
 
                         ]))()
-                        
+
                     }
                 </HTMLFlipBook>
             </div>

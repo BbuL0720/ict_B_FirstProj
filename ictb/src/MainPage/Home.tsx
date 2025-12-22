@@ -156,7 +156,7 @@ const Home: React.FC = () => {
                         <div className="col" >
                             <div style={{ backgroundColor: '#6C5CA7', borderRadius: '15px', color: 'white' }}>
                                 <div className="">
-                                    <Link to={'/todo'} style={{ color: 'white', textDecoration: 'none' }}>
+                                    <Link to={'/todo/todo'} style={{ color: 'white', textDecoration: 'none' }}>
                                         <div className="todo-title text-center" style={{
                                             padding: '8px',
                                             borderBottom: '1px soide white'
