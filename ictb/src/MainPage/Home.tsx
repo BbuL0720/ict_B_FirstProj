@@ -85,8 +85,8 @@ const Home: React.FC = () => {
                         </div>
                         <div style={{ position: 'relative', height: '600px', overflow: 'hidden' }}>
                             <img src="img/img3.png" style={{
-                                width: '60%',
-                                height: '60%',
+                                width: '50%',
+                                height: '50%',
                                 objectFit: 'cover',
                                 objectPosition: 'center center'
                             }} />

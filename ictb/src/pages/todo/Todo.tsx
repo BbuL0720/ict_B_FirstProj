@@ -4,18 +4,21 @@ import "react-calendar/dist/Calendar.css";
 import "./todo.css";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 
 const dummyData = [
   {
+    id: 0,
     date: '2025-12-19',
     description: '프로젝트 기획 회의'
   },
   {
+    id: 1,
     date: '2025-12-20',
     description: '헬스장 PT'
   },
   {
+    id: 2,
     date: '2025-12-20',
     description: '친구와 저녁'
   }
@@ -25,6 +28,7 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 interface Todo {
+  id: number[];
   date: string;
   description: string;
 };
@@ -34,6 +38,16 @@ const Todo: React.FC = () => {
   const [date, setDate] = useState(new Date()); // 초기값으로 현재 날짜 설정
   const [inputValue, setInputValue] = useState(''); // 현재 인풋 값
   const [data, setData] = useState(dummyData); // 더미데이터 추가
+  const [plusId, setPlusId] = useState<number>(2);
+
+  const [editingId, setEditingId] = useState<number | null>(null);
+  const [editValue, setEditValue] = useState('');
+
+  useEffect(() => {
+    setPlusId(plusId + 1);
+
+  }, [setData])
+
   const formatDate = (date: Date): string => { // 데이터가 이전날짜로 나오기 때문에 시간차 해결코드 (인터넷에 가져옴)
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -64,12 +78,38 @@ const Todo: React.FC = () => {
   const addTodo = () => {
     if (inputValue.trim() !== '') { // 공백이 아니면 추가
       console.log("TODO입력");
-      setData([...data, { date: formatDate(date), description: inputValue }]); // 기존 items 배열에 새 값 추가
+      setData([...data, { id: plusId, date: formatDate(date), description: inputValue }]); // 기존 items 배열에 새 값 추가
       setInputValue("");
     }
-
   };
-  console.log("todo_data =" + JSON.stringify(data));
+
+  const deleteTodo = (id: number) => {
+    if (window.confirm("삭제학시겠습니까?")) {
+      setData(data.filter(
+        (item) => item.id !== id
+      ));
+    }
+  }
+  const saveTodo = (id: number) => {
+    setData(
+      data.map((item) =>
+        item.id === id
+          ? { ...item, description: editValue }
+          : item
+      )
+    );
+    setEditingId(null);
+    setEditValue('');
+  };
+
+  const editTodo = (id: number) => {
+    const target = data.find((item) => item.id === id);
+    if (!target) return;
+
+    setEditingId(id);
+    setEditValue(target.description);
+  };
+
 
   return (
     <div>
@@ -108,14 +148,33 @@ const Todo: React.FC = () => {
                 </div>
 
                 {findData.length > 0 ? (
-                  <ul>
+                  <ul style={{ marginRight: '20px' }}>
                     {findData.map((item, index) => (
                       <li key={index} className="todo-item">
-                        <span>{item.description}</span>
-                        <div className="actions">
-                          <i className="edit"><EditIcon /></i>
-                          <i className="delete"><DeleteIcon /></i>
-                        </div>
+                        {editingId === item.id ? (
+                          <>
+                            <input
+                              value={editValue}
+                              onChange={(e) => setEditValue(e.target.value)}
+                              className="todo-input-box"
+                            />
+                            <button style={{ backgroundColor: '#64cb84', color: 'white', borderRadius: '4px', marginLeft: '10px' }} onClick={() => saveTodo(item.id)} >
+                              <CheckOutlinedIcon />
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <span>{item.description}</span>
+                            <div className="actions">
+                              <i className="edit" onClick={() => editTodo(item.id)}>
+                                <EditIcon />
+                              </i>
+                              <i className="delete" onClick={() => deleteTodo(item.id)}>
+                                <DeleteIcon />
+                              </i>
+                            </div>
+                          </>
+                        )}
                       </li>
                     ))}
                   </ul>

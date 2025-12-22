@@ -3,7 +3,7 @@ import React from 'react'
 const Friend: React.FC = () => {
   const member = {
     userid: "user01",
-    name: "김철수",
+    name: "홍길동",
   };
 
   // 전체 회원 목록
