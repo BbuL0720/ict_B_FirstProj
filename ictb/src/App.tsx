@@ -26,10 +26,11 @@ import "slick-carousel/slick/slick-theme.css";
 import ForgotPwd from "./pages/login/ForgotPwd";
 import Diary from "./pages/diary/Diary";
 import Friend from "./pages/friend/Friend";
+import UpdatePwd from "./pages/login/UpdatePwd";
 
 
 function App() {
-	const [isLogin, setIsLogin] = useState<boolean>(true); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
+	const [isLogin, setIsLogin] = useState<boolean>(false); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
 
 	const handleLogout = () => {
 		setIsLogin(false);
@@ -67,6 +68,8 @@ function App() {
 					<Route path="/login" element={<Login onLogin={() => setIsLogin(true)} />} />
 					<Route path="/signup" element={<Signup />} />
 					<Route path="/forgot" element={<ForgotPwd />} />
+					<Route path="/updatepwd" element={<UpdatePwd />} />
+
 					<Route path="*" element={<Undo />} />
 				</Routes>
 			)}
