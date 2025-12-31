@@ -10,6 +10,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 // 컴포넌트가 자식으로 오직 하나의 JSX 요소만 받도록 제네릭으로 선언한 것이다.
 const RequireAuth: React.FC<{ children: JSX.Element }> = ({ children }) => {
   const { member } = useAuth();
+  console.log(member?.mid)
   const location = useLocation();
   if (!member) { //login정보가 없으면 
     return <Navigate to="/login" state={{ from: location }} replace />;

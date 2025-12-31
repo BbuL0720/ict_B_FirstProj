@@ -26,6 +26,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const res = await axios.get(`${process.env.REACT_APP_BACK_END_URL}/login/session`, {
         withCredentials: true
       });
+      console.log(res.data)
       if (res.data?.mid) {
         setMember(res.data); // 로그인 된 정보를 받아서 useState에 저장한다.
       } else {

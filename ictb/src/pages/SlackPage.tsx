@@ -47,7 +47,6 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
 	const locArray = useLocation().pathname.split('/');
 	const url_main = locArray[1];
 	const url_sub = locArray.slice(2).join('/');
-
 	const currentItem = sideItems.find((item) => item.url_main === url_main);
 	const displayTitle = (() => {
 		if (currentItem?.subTitles != null) {

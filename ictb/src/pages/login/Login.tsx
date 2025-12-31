@@ -17,7 +17,7 @@ const Login: React.FC = () => {
         const result = await login(mid, password)
         if (result === "success") {
             alert("로그인되었습니다.")
-            navigate("/home");
+            navigate("/home", {replace:true});
         } else {
             alert("아이디/비밀번호 오류");
         }
@@ -73,11 +73,11 @@ const Login: React.FC = () => {
                                             </div>
 
                                             <div className="col-sm-6">
-                                                <Link to={'/forgot'} className="float-end" style={{ color: '#7a44e0' }}>비밀번호를 잊어버렸어요</Link>
+                                                <Link to="/forgot" className="float-end" style={{ color: '#7a44e0' }}>비밀번호를 잊어버렸어요</Link>
                                             </div>
                                             <div className="col-12 d-flex justify-content-between">
                                                 <button type="button" className="btn px-4 float-end mt-4" style={{ backgroundColor: '#fff', border: '1px solid #7a44e0' }}>
-                                                    <Link to={`/signup`} style={{ textDecoration: 'none', color: '#7a44e0' }}>회원가입</Link>
+                                                 <Link to="/signup" style={{ textDecoration: 'none', color: '#7a44e0' }}>회원가입</Link>
                                                 </button>
                                                 <button type="submit" className="btn px-4 float-end mt-4" style={{ color: 'white', backgroundColor: '#7a44e0' }}>로그인</button>
                                             </div>
