@@ -89,7 +89,7 @@ const Friend: React.FC = () => {
           </ul>
 
           <div className="mt-3">
-            <button className="btn btn-purple">친구 신청</button>
+            <button className="btn" style={{ border:'1px solid #977197ff', color:'#977197ff' }}>친구 신청</button>
           </div>
 
           <hr />
