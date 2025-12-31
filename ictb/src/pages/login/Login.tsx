@@ -1,26 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../AuthProvider';
 
 interface LoginProps {
     onLogin: () => void;
 }
 
-const Login: React.FC<LoginProps> = ({ onLogin }) => {
+const Login: React.FC = () => {
     const navigate = useNavigate();
-    const [userId, setUserId] = useState('');
+    const [mid, setMid] = useState('');
     const [password, setPassword] = useState('');
-    const handleLogin = (e: React.FormEvent) => {
+    const { login } = useAuth();
+
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (userId === "admin" && password === "admin") {
-            onLogin();
+        const result = await login(mid, password)
+        if (result === "success") {
+            alert("로그인되었습니다.")
             navigate("/home");
         } else {
             alert("아이디/비밀번호 오류");
         }
     };
 
-    const signupClick = () => {
-    }
 
     const inputRef = useRef<HTMLInputElement>(null);
     const focusInput = () => {
@@ -50,7 +52,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                                                 <div className="input-group">
                                                     <div className="input-group-text"><i className="bi bi-person-fill"></i></div>
                                                     <input ref={inputRef} type="text" className="form-control" placeholder="아이디를 입력하세요"
-                                                        onChange={(e) => setUserId(e.target.value)} />
+                                                        onChange={(e) => setMid(e.target.value)} />
                                                 </div>
                                             </div>
 
