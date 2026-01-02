@@ -1,0 +1,13 @@
+yarn add react-router-dom
+yarn add --dev @types/react-router-dom
+
+yarn add react-slick
+yarn add slick-carousel
+yarn add --dev @types/react-slick
+yarn add react-pageflip
+
+yarn add axios
+yarn add react-calendar
+
+yarn add bootstrap
+yarn add @mui/icons-material

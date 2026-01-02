@@ -6,6 +6,7 @@ interface Member {
   email: string;
 }
 interface AuthContextProps {
+  loading:boolean;
   member: Member | null;
   checkLogin: () => void;
   isLoggedIn: boolean;
@@ -20,11 +21,13 @@ interface AuthContextProps {
 // 1단계: Context 생성
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
+  children,  
 }) => {
   const [member, setMember] = useState<Member | null>(null);
+  const [loading, setLoading] = useState(true);
   //로그인 상태를 체크 해주는 함수
   const checkLogin = async () => {
+    
     try {
       // withCredentials: true
       // backend에서도 .allowCredentials(true) 를 설정해야 함.(세션을 사용해서 동기화 할때 사용 )
@@ -73,9 +76,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     setMember(null);
   };
   //새로 고침을 해도 초기화로 checkLogin() 을 호출해서 유지 시킨다.
-  useEffect(() => {
-    checkLogin();
-  }, []);
+ useEffect(() => {
+  const initAuth = async () => {
+    try {
+      const savedMember = localStorage.getItem("member");
+      if (savedMember) {
+        setMember(JSON.parse(savedMember));
+      }
+      await checkLogin(); 
+    } finally {
+      setLoading(false); 
+    }
+  };
+
+  initAuth();
+}, []);
   const updateMemberName = (mname: string) => {
     setMember((prev) => (prev ? { ...prev, mname } : prev));
   };
@@ -87,6 +102,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   return (
     <AuthContext.Provider
       value={{
+        loading,
         member,
         isLoggedIn,
         checkLogin,

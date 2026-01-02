@@ -32,50 +32,13 @@ import RequireAuth from "./pages/RequireAuth";
 import RequireGuest from "./pages/RequireGuest";
 
 function App() {
-  // const [isLogin, setIsLogin] = useState<boolean>(false); //axios로 로그인 정보 받고 데이터가 있으면? 으로 처리해야할듯(세션) 아마 안될듯
-
-  // const handleLogout = () => {
-  // 	setIsLogin(false);
-  // };
 
   return (
-    // <AuthProvider>
-    // 	<Router>
-    // 		{/* {isLogin && <Header />} */}
-    // 		<RequireAuth>
-    // 			<SlackPage>
-    // 				<Routes>
-    // 					<Route path='/mypage' element={<MyPage />} />
-    // 					<Route path='/home' element={<Home />} />
-    // 					{/* <Route path="/" element={<Navigate to="/board/free/list" replace />} /> */}
 
-    // 					<Route path="/board/:kind/list" element={<BoardList />} />
-    // 					<Route path="/board/:kind/detail/:id" element={<BoardDetail />} />
-    // 					<Route path="/board/write" element={<BoardForm />} />
-    // 					{/* <Route path="/board/:kind/form" element={<BoardForm />} /> */}
-
-    // 					<Route path="/todo/todo" element={<Todo />} />
-    // 					<Route path="/todo/diary" element={<Diary />} />
-    // 					<Route path="/friend" element={<Friend />} />
-
-    // 					<Route path="/lost/:kind/list" element={<LostList />} />
-    // 					<Route path="/lost/:kind/detail/:id" element={<LostDetail />} />
-    // 					<Route path="/lost/:kind/form" element={<LostForm />} />
-    // 				</Routes>
-    // 			</SlackPage>
-    // 		</RequireAuth>
-    // 		<Routes>
-    // 			<Route path="/" element={<RequireAuth><Navigate to="/home" replace /></RequireAuth>} />
-    // 			<Route path="/login" element={<Login />} />
-    // 			<Route path="/signup" element={<Signup />} />
-    // 			<Route path="/forgot" element={<ForgotPwd />} />
-    // 			<Route path="/updatepwd" element={<UpdatePwd />} />
-    // 		</Routes>
-    // 	</Router>
-    // </AuthProvider>
     <AuthProvider>
       <Router>
         <RequireAuth>
+          
           <SlackPage>
             <Routes>
               <Route path="/home" element={<Home />} />
@@ -123,7 +86,6 @@ function App() {
           />
         </Routes>
 
-        {/* 기본 진입 */}
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>

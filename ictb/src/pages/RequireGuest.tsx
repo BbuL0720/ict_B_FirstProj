@@ -10,7 +10,7 @@ const RequireGuest: React.FC<{ children: JSX.Element }> = ({ children }) => {
   // 이미 로그인 되어 있으면 login/signup 접근 차단
   console.log("member "+member)
   if (member) {
-    return <Navigate to="/home" state={{ from: location }} replace />;
+    return <Navigate to="/home" replace />;
   }
 
   return children;
