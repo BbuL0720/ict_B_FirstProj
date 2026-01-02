@@ -18,7 +18,7 @@ const Friend: React.FC = () => {
       .get(`${process.env.REACT_APP_BACK_END_URL}/api/friends/members`, {
         withCredentials: true,
       })
-      .then((res) => setMembers(res.data));
+      .then((res) => setMembers(res.data));    
     axios
       .get(`${process.env.REACT_APP_BACK_END_URL}/api/friends/incoming`, {
         withCredentials: true,
@@ -73,7 +73,7 @@ const Friend: React.FC = () => {
   const receiveResponse = async (id: number, action: string) => {
     await axios.post(
       `${process.env.REACT_APP_BACK_END_URL}/api/friends/respond`,
-      { id, action },
+      { frid:id, action },
       { withCredentials: true }
     );
     alert(`${action === "accept" ? "수락" : "거절"} 처리됨`);
@@ -90,6 +90,7 @@ const Friend: React.FC = () => {
           <h5 className="mt-4 text-purple fw-semibold">친구 추천 목록</h5>
           <ul className="list-group list-group-flush">
             {members
+              .filter((m) => m.mid !== member?.mid)
               .filter((m) => !friends.find((f) => f.mid === m.mid))
               .filter(
                 (m) =>
