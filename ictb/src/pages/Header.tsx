@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "../style/styles.css"
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useAuth } from "./AuthProvider";
 interface sideProps {
   title: string;
 }
 
 const Header: React.FC<sideProps> = ({ title }) => {
+  const {member} = useAuth();
   const [showInfo, setShowInfo] = useState(false);
   const showmypage = () => {
 
@@ -41,7 +43,7 @@ const Header: React.FC<sideProps> = ({ title }) => {
           display: 'flex', alignItems: 'center'
         }}>
           <p className="m-0 me-3">
-            홍길동 님, 환영합니다</p>
+             {member?.mname}님, 환영합니다</p>
 
           <div className="myshowstyle">
             <div onClick={showmypage}>

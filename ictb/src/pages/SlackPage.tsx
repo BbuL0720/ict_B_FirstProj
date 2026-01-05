@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import AutoAwesomeMosaicIcon from "@mui/icons-material/AutoAwesomeMosaic";
 import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import Header from "./Header";
+import axios from "axios";
+import { useAuth } from "./AuthProvider";
 
 interface Title {
   //메인 아이템(한개)
@@ -64,9 +66,11 @@ const SlackPage: React.FC<LayoutProps> = ({ children }) => {
     }
     return currentItem?.title || "";
   })();
-
+  const {logout} = useAuth();
   const navigate = useNavigate();
   const handleLogout = () => {
+    logout();
+    alert('로그아웃 되었습니다.');
     navigate("/login");
   };
 
