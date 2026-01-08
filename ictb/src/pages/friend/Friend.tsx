@@ -114,9 +114,10 @@ const Friend: React.FC = () => {
                     }
                     // checked={selected.has(m.userid)}
                   />
-                  <span className="fw-medium">
-                    {m.mname} ({m.mid})
-                  </span>
+                  {m.mname} ({m.mid})
+                  {rejected.has(m.mid) && (
+                    <span className="fw-medium">: 거절됨 (재요청 가능)</span>
+                  )}
                 </li>
               ))}
           </ul>
@@ -124,6 +125,7 @@ const Friend: React.FC = () => {
           <div className="mt-3">
             <button
               onClick={sendRequest}
+              disabled={selected.size === 0}
               className="btn"
               style={{
                 border: "1px solid white",
@@ -141,7 +143,7 @@ const Friend: React.FC = () => {
           <ul className="list-group">
             {incoming.map((req) => (
               <li
-                key={req.frid}
+                key={req.id}
                 className="list-group-item d-flex align-items-center"
               >
                 {req.req_id} 님이 친구 요청을 보냈습니다.
@@ -154,7 +156,7 @@ const Friend: React.FC = () => {
                   </button>
                   <button
                     className="btn btn-sm btn-outline-danger m-2"
-                    onClick={() => receiveResponse(req.frid, "rejected")}
+                    onClick={() => receiveResponse(req.frid, "reject")}
                   >
                     거절
                   </button>

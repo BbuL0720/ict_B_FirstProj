@@ -32,34 +32,43 @@ import RequireAuth from "./pages/RequireAuth";
 import RequireGuest from "./pages/RequireGuest";
 
 function App() {
-
   return (
-
     <AuthProvider>
       <Router>
-        <RequireAuth>
-          
-          <SlackPage>
-            <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/mypage" element={<MyPage />} />
-
-              <Route path="/board/:kind/list" element={<BoardList />} />
-              <Route path="/board/:kind/detail/:id" element={<BoardDetail />} />
-              <Route path="/board/write" element={<BoardForm />} />
-
-              <Route path="/todo/todo" element={<Todo />} />
-              <Route path="/todo/diary" element={<Diary />} />
-              <Route path="/friend" element={<Friend />} />
-
-              <Route path="/lost/:kind/list" element={<LostList />} />
-              <Route path="/lost/:kind/detail/:id" element={<LostDetail />} />
-              <Route path="/lost/:kind/form" element={<LostForm />} />
-            </Routes>
-          </SlackPage>
-        </RequireAuth>
-
         <Routes>
+          <Route
+            path="/*"
+            element={
+              <RequireAuth>
+                <SlackPage>
+                  <Routes>
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/mypage" element={<MyPage />} />
+
+                    <Route path="/board/:kind/list" element={<BoardList />} />
+                    <Route
+                      path="/board/:kind/detail/:id"
+                      element={<BoardDetail />}
+                    />
+                    <Route path="/board/write" element={<BoardForm />} />
+
+                    <Route path="/lost/:kind/list" element={<LostList />} />
+                    <Route
+                      path="/lost/:kind/detail/:id"
+                      element={<LostDetail />}
+                    />
+                    <Route path="/lost/:kind/form" element={<LostForm />} />
+
+                    <Route path="/todo/todo" element={<Todo />} />
+                    <Route path="/todo/diary" element={<Diary />} />
+
+                    <Route path="/friend" element={<Friend />} />
+                  </Routes>
+                </SlackPage>
+              </RequireAuth>
+            }
+          />
+
           <Route
             path="/login"
             element={
@@ -84,9 +93,15 @@ function App() {
               </RequireGuest>
             }
           />
-        </Routes>
+          <Route
+            path="/updatepwd"
+            element={
+              <RequireGuest>
+                <UpdatePwd />
+              </RequireGuest>
+            }
+          />
 
-        <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>
       </Router>
